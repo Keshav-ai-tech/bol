@@ -1,0 +1,174 @@
+{
+  "topics": {
+    "daily_life": {
+      "name": "Daily Life & Sunday Routine",
+      "hindi": "दैनिक जीवन और दिनचर्या",
+      "greeting": "Hello! I'm Priya, your Bol speaking coach. How was your day today, and what did you do this morning?",
+      "greetingHindi": "नमस्ते! मैं प्रिया हूँ, आपकी स्पीकिंग कोच। आज आपका दिन कैसा रहा?",
+      "turns": [
+        {
+          "triggerWords": ["market", "buy", "vegetables", "went", "shop"],
+          "transcript": "Yesterday I was went to the market for buying fresh vegetables.",
+          "reply": "That sounds like a lovely Sunday plan! Did you go to the local sabzi mandi or a supermarket?",
+          "corrections": [
+            {
+              "original": "Yesterday I was went to the market",
+              "better": "Yesterday I went to the market",
+              "why": "Use simple past 'went' directly without 'was'. हिंदी: 'was went' एक साथ नहीं बोलते — सीधे 'I went' कहें।"
+            },
+            {
+              "original": "for buying fresh vegetables",
+              "better": "to buy fresh vegetables",
+              "why": "Use 'to buy' to express purpose. हिंदी: उद्देश्य बताने के लिए 'to + verb' का उपयोग करें।"
+            }
+          ],
+          "encouragement": "Good effort! Your sentence was completely clear and understandable."
+        },
+        {
+          "triggerWords": ["supermarket", "mandi", "local", "crowded"],
+          "transcript": "I went to local mandi because vegetables is very fresh and cheap there.",
+          "reply": "I love local mandis too! Which vegetable did you buy the most, and how did you negotiate with the vendor?",
+          "corrections": [
+            {
+              "original": "I went to local mandi",
+              "better": "I went to the local mandi",
+              "why": "Add the article 'the' before specific places like 'the local mandi'."
+            },
+            {
+              "original": "vegetables is very fresh",
+              "better": "the vegetables are very fresh",
+              "why": "Use plural verb 'are' with plural noun 'vegetables'."
+            }
+          ],
+          "encouragement": "Superb flow! You expressed your reason clearly without hesitation."
+        },
+        {
+          "triggerWords": ["potato", "tomato", "onion", "bargain", "cooked"],
+          "transcript": "I bought tomatoes and onions, then my mother cooked very tasty sabzi for lunch.",
+          "reply": "That sounds delicious! Home-cooked meals made with fresh ingredients are the best. What is your favourite dish that your mother makes?",
+          "corrections": [
+            {
+              "original": "cooked very tasty sabzi",
+              "better": "cooked a very tasty dish",
+              "why": "In formal English, you can say 'cooked a delicious curry' or 'cooked a very tasty dish'."
+            }
+          ],
+          "encouragement": "Wonderful sentence structure and natural confidence!"
+        }
+      ]
+    },
+    "interview": {
+      "name": "Job & Placement Interview",
+      "hindi": "नौकरी और प्लेसमेंट इंटरव्यू",
+      "greeting": "Welcome to your mock interview practice! Tell me a little about yourself and your academic background.",
+      "greetingHindi": "मॉक इंटरव्यू में स्वागत है! अपने बारे में और अपनी पढ़ाई के बारे में थोड़ा बताएं।",
+      "turns": [
+        {
+          "triggerWords": ["myself", "engineering", "student", "college"],
+          "transcript": "Myself Rahul, I am doing computer engineering from final year.",
+          "reply": "Pleasure to meet you, Rahul! What technical project are you currently most proud of?",
+          "corrections": [
+            {
+              "original": "Myself Rahul",
+              "better": "My name is Rahul / I am Rahul",
+              "why": "Avoid starting with 'Myself'. In professional introductions, use 'My name is' or 'I am'."
+            },
+            {
+              "original": "I am doing computer engineering from final year",
+              "better": "I am a final-year Computer Engineering student",
+              "why": "More concise and natural in professional interviews."
+            }
+          ],
+          "encouragement": "Great composure! Starting an interview takes courage, and you spoke with clarity."
+        },
+        {
+          "triggerWords": ["project", "website", "ai", "react"],
+          "transcript": "I builted an AI speaking app that help students to learn English without fear.",
+          "reply": "That is an impactful problem to solve! How did you handle user audio transcription and feedback generation?",
+          "corrections": [
+            {
+              "original": "I builted an AI speaking app",
+              "better": "I built an AI speaking application",
+              "why": "The past tense of build is 'built' (irregular verb), not 'builted'."
+            },
+            {
+              "original": "that help students",
+              "better": "that helps students",
+              "why": "Use singular verb 'helps' with singular noun 'app'."
+            }
+          ],
+          "encouragement": "Impressive project idea! The interview panel will love this initiative."
+        }
+      ]
+    },
+    "travel": {
+      "name": "Travel & Social Settings",
+      "hindi": "यात्रा और सामाजिक बातचीत",
+      "greeting": "Imagine you've just arrived at a new city's train station. How would you ask someone for directions to the nearest hotel?",
+      "greetingHindi": "मान लीजिए आप नए शहर के रेलवे स्टेशन पर पहुंचे हैं। होटल का रास्ता कैसे पूछेंगे?",
+      "turns": [
+        {
+          "triggerWords": ["excuse", "hotel", "where", "station", "near"],
+          "transcript": "Excuse me brother, where is the nearest good hotel from here?",
+          "reply": "Good polite opening! If the person says it's 2 kilometres away, how would you ask about taking an auto or cab?",
+          "corrections": [
+            {
+              "original": "Excuse me brother",
+              "better": "Excuse me sir / Excuse me",
+              "why": "In professional or travel English, simply 'Excuse me' or 'Excuse me, sir' sounds most natural."
+            }
+          ],
+          "encouragement": "Clear, friendly, and practical! You got your question across immediately."
+        }
+      ]
+    },
+    "jugaad_genius": {
+      "name": "Jugaad Genius • Everyday Problem Solving",
+      "hindi": "स्मार्ट देसी समस्या समाधान (जुगाड़ जीनियस)",
+      "greeting": "Welcome to Jugaad Genius! Let's test your street-smart problem solving. What would you do if your phone battery drops to 2% right as you need to show your e-ticket at the station gate?",
+      "greetingHindi": "जुगाड़ जीनियस में आपका स्वागत है! मान लीजिए रेलवे स्टेशन पर टिकट दिखाते समय फ़ोन की बैटरी 2% बची है, तो आप टिकट परीक्षक से क्या कहेंगे?",
+      "greetingTamil": "ஜூகாட் ஜீனியஸ் பகுதிக்கு நல்வரவு! ரயில் நிலையத்தில் டிக்கெட் காட்டும் போது பேட்டரி 2% மட்டுமே இருந்தால் எப்படி சமாளிப்பீர்கள்?",
+      "turns": [
+        {
+          "triggerWords": ["battery", "phone", "dead", "scan", "quick", "ticket", "charge"],
+          "transcript": "Excuse me sir, my phone battery is at 2 percent, can I quickly scan my ticket before it shuts down?",
+          "reply": "Brilliant Jugaad composure! Saying 'before it shuts down' conveys the urgency immediately without panic. Next challenge: A shopkeeper gives you toffees instead of 5 rupees change. How do you ask for your cash politely?",
+          "corrections": [
+            {
+              "original": "can I quickly scan",
+              "better": "may I please quickly scan / could I quickly scan",
+              "why": "Using 'could I' or 'may I' is more polite when requesting an urgent exception."
+            }
+          ],
+          "encouragement": "Fast, witty thinking! You handled the high-pressure situation like a pro."
+        },
+        {
+          "triggerWords": ["toffee", "candy", "change", "money", "rupees", "cash"],
+          "transcript": "Bhaiya, please give me cash change instead of toffees because I need it for the bus ticket.",
+          "reply": "Spot-on practical negotiation! Giving a clear real-world reason ('need it for the bus') leaves no room for arguing. Final challenge: Your Wi-Fi disconnected for 30 seconds during an online interview. How do you recover when you reconnect?",
+          "corrections": [
+            {
+              "original": "give me cash change",
+              "better": "could you please give me the cash change",
+              "why": "Adding 'could you please' turns a direct demand into a polite yet firm request."
+            }
+          ],
+          "encouragement": "Clever and street-smart! Everyday confidence comes from handling these small moments smoothly."
+        }
+      ]
+    }
+  },
+  "defaultSummary": {
+    "scores": {
+      "fluency": 8.4,
+      "grammar": 7.8,
+      "confidence": 8.8
+    },
+    "topMistakes": [
+      "Double past tense ('was went' instead of 'went')",
+      "Missing articles ('the local mandi', 'a delicious dish')",
+      "Formal intro phrasing ('Myself Rahul' instead of 'My name is Rahul')"
+    ],
+    "tip": "Keep sentences short and punchy. Use simple past tense (went, saw, made) whenever describing yesterday's events."
+  }
+}

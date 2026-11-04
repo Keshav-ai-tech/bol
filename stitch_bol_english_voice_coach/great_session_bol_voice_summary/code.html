@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#62fae3", "on-surface-variant": "#dfc0b8", "on-primary": "#621100", "on-secondary": "#003731", "surface-container-highest": "#313253", "on-tertiary": "#322270", "background": "#0f1030", "on-error-container": "#ffdad6", "tertiary": "#cabeff", "on-error": "#690005", "tertiary-container": "#a596eb", "surface-container": "#1b1c3c", "surface": "#0f1030", "surface-variant": "#313253", "on-tertiary-fixed": "#1c055b", "error-container": "#93000a", "error": "#ffb4ab", "primary-fixed": "#ffdad2", "surface-dim": "#0f1030", "on-tertiary-fixed-variant": "#493a88", "secondary-fixed-dim": "#3cddc7", "on-surface": "#e1e0ff", "primary": "#ffb4a2", "on-background": "#e1e0ff", "tertiary-fixed-dim": "#cabeff", "secondary": "#44e2cd", "outline": "#a68b84", "on-secondary-fixed-variant": "#005047", "outline-variant": "#58423c", "primary-container": "#ff7a59", "surface-container-high": "#262747", "on-primary-fixed": "#3c0700", "on-primary-fixed-variant": "#862208", "surface-tint": "#ffb4a2", "inverse-on-surface": "#2c2d4e", "surface-container-low": "#171838", "on-primary-container": "#701500", "secondary-container": "#03c6b2", "on-secondary-fixed": "#00201c", "on-tertiary-container": "#3a2b78", "primary-fixed-dim": "#ffb4a2", "inverse-primary": "#a7391e", "surface-bright": "#353658", "surface-container-lowest": "#090a2a", "on-secondary-container": "#004d44", "inverse-surface": "#e1e0ff", "tertiary-fixed": "#e6deff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2.5rem", "gutter": "1rem", "margin": "1.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter-desktop": "2rem", "margin-desktop": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, fontFamily: { "body-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Epilogue"], "label-score-md": ["Space Grotesk"], "headline-lg": ["Epilogue"], "label-caps": ["Space Grotesk"], "headline-lg-mobile": ["Epilogue"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Epilogue"], "headline-sm": ["Epilogue"], "display-hero": ["Epilogue"], "label-score-lg": ["Space Grotesk"], "script-hinglish": ["Noto Sans"], "body-sm": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-score-md": ["18px", { "lineHeight": "22px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-score-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "script-hinglish": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-primary-container/20 blur-[130px]"></div><div class="absolute top-1/3 -right-24 w-[30rem] h-[30rem] rounded-full bg-tertiary-container/15 blur-[140px]"></div><div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-secondary-container/15 blur-[120px]"></div></div><header class="fixed top-0 w-full z-50 bg-surface-container/60 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.35)]"><div class="h-20 w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm group" data-path="bol-orb" href="#"><img alt="Bol App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xqs5kOlOg20kYmkPparDpBI6ChWUrMoRYAiDX3FTMQzzu13Kn0wTHgdCiiY5gU-fKsv-Rf8RHq7N1yrfjmyp29qSEvYmdvwxTH-ETqvYJm5GZ3zjZLl17Kzcqb1zI4rVRTawOjmHz0jmRL3B1NIXo9KMezycU3SzDLwV0K-LWhxdeJzXWVVSgbQ9pls8dVR8MLP_TzWNG87rqgpAhlGMNxjR_SukXTgJfz9wsIppOD"/><div class="flex items-center"><span class="font-['Fraunces'] text-2xl font-bold tracking-tight text-on-surface">Bol</span><span class="w-2 h-2 ml-1 rounded-full bg-primary-container shadow-[0_0_12px_#ff7a59]"></span></div></a><div class="hidden md:flex items-center gap-space-xs pl-space-sm border-l border-surface-container-highest/60"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Sanctuary Mode</span><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span></div></div><nav class="hidden xl:flex items-center p-1 rounded-full bg-surface-container-low/70 backdrop-blur-md" data-active-classes="bg-surface-container-highest text-on-surface shadow-[0_0_20px_rgba(68,226,205,0.15)]"><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="practice-setup-onboarding" href="#">Practice Setup</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="bol-orb" href="#">Practice Orb</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="daily-topics" href="#">Daily Topics</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="gentle-feedback-and-history" href="#">Gentle Feedback &amp; History</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="fluency-progress" href="#">Fluency Progress</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md shrink-0"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low/90"><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span></div><span class="font-label-caps text-label-caps text-on-surface-variant">Step 2/3</span></div><div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high/80 text-on-surface"><span class="material-symbols-outlined text-primary text-base leading-none">local_fire_department</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-bold">14 Days</span></div><button class="flex items-center justify-center h-8 px-2.5 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors" title="Toggle Hindi/English" type="button"><span class="font-script-hinglish text-script-hinglish text-secondary leading-none font-medium">A/अ</span></button><button class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors text-on-surface-variant hover:text-on-surface" title="Audio and Mic Settings" type="button"><span class="material-symbols-outlined text-lg leading-none">tune</span></button><div class="flex items-center gap-space-xs pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWEywrzynyWhymxrFD5Jaj6fPbCZanPAj35Va9ItC4pq2nANCZ9CtHilLWeRfrrSkp6ONiHm28Qph6seqqV1lg4ljmt1cJytjlAKdXQrkNApEghM2FtgqocYlcisHEZd_BJcKlF7zakIHa5k6PyN8UK0o00NdS9OcBNLqOQAgoFop2VobuXV7tfXh2BWQbf1XeW5OFyiDQsqvoYi8n6QkSbDC5c84rvFTT9mBlQk"/><span class="hidden md:inline font-body-sm text-body-sm font-medium text-on-surface">Aarav</span></div></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<div class="relative w-full px-gutter md:px-margin-tablet lg:px-margin-desktop py-space-xl overflow-hidden">
+<!-- Ambient Rangoli & Celestial Glow Backdrops -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-96 pointer-events-none opacity-40">
+<div class="absolute -top-10 left-1/3 w-80 h-80 rounded-full bg-primary-container/25 blur-[120px]"></div>
+<div class="absolute top-20 right-1/4 w-72 h-72 rounded-full bg-secondary-container/20 blur-[130px]"></div>
+<div class="absolute top-10 left-1/2 w-64 h-64 rounded-full bg-tertiary-container/20 blur-[110px]"></div>
+<!-- Whisper-thin Rangoli Filigree Vector -->
+<svg class="w-full h-full text-tertiary/10" fill="none" viewbox="0 0 800 400">
+<circle cx="400" cy="180" r="160" stroke="currentColor" stroke-dasharray="4 8" stroke-width="0.5"></circle>
+<circle cx="400" cy="180" r="110" stroke="currentColor" stroke-width="0.75"></circle>
+<circle cx="400" cy="180" r="60" stroke="currentColor" stroke-width="0.5"></circle>
+<path d="M 400,20 L 400,340 M 240,180 L 560,180" stroke="currentColor" stroke-dasharray="2 6" stroke-width="0.5"></path>
+<path d="M 286,66 L 514,294 M 286,294 L 514,66" stroke="currentColor" stroke-dasharray="2 6" stroke-width="0.5"></path>
+</svg>
+</div>
+<!-- Celebration Sparkling Particles Floating Field -->
+<div class="absolute inset-0 pointer-events-none select-none z-0">
+<span class="absolute top-8 left-[15%] w-2 h-2 rounded-full bg-primary-container shadow-[0_0_12px_#ff7a59] animate-pulse"></span>
+<span class="absolute top-24 left-[28%] w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_10px_#44e2cd] animate-bounce"></span>
+<span class="absolute top-16 right-[22%] w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_14px_#cabeff] opacity-75"></span>
+<span class="absolute top-40 right-[12%] w-1.5 h-1.5 rounded-full bg-primary-fixed shadow-[0_0_8px_#ffdad2]"></span>
+<span class="absolute top-36 left-[8%] w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_12px_#62fae3] opacity-60"></span>
+<span class="absolute top-48 left-[45%] w-1 h-1 rounded-full bg-tertiary-fixed shadow-[0_0_6px_#e6deff]"></span>
+</div>
+<!-- Celebration Header Content -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto space-y-space-sm">
+<!-- Metadata Chip -->
+<div class="inline-flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container/80 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest font-semibold">Sunday Mastery</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily Life &amp; Sunday Routine</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface">4 mins spoken</span>
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps text-primary px-2 py-0.5 rounded-full bg-surface-container-highest">
+<span class="material-symbols-outlined text-sm leading-none text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+          14-DAY STREAK
+        </span>
+</div>
+<!-- Main Heading with Dual Script Grace -->
+<h1 class="font-['Fraunces'] text-display-hero tracking-tight bg-gradient-to-r from-primary-fixed via-primary-container to-secondary bg-clip-text text-transparent pt-2">
+        Great session!
+      </h1>
+<p class="font-script-hinglish text-script-hinglish text-secondary-fixed font-medium max-w-xl">
+        शानदार बोलचाल! आपकी हिचकिचाहट हर दिन कम हो रही है और आत्मविश्वास बढ़ रहा है।
+      </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+        You spoke clearly without retreating into long hesitations. Here is how your natural rhythm sounded today.
+      </p>
+</div>
+<!-- Centerpiece Trio of Circular Score Rings -->
+<div class="relative z-10 mt-space-xl grid grid-cols-1 md:grid-cols-3 gap-space-lg max-w-6xl mx-auto">
+<!-- 1. Fluency Card -->
+<div class="relative group flex flex-col items-center p-space-lg rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-xl transition-all duration-300 hover:bg-surface-container-high/70">
+<div class="absolute -top-3 right-6 px-space-xs py-0.5 rounded-full bg-primary-container/20 text-primary font-label-caps text-label-caps uppercase tracking-wider">
+          Top Momentum
+        </div>
+<!-- SVG Progress Ring (84%) -->
+<div class="relative w-44 h-44 flex items-center justify-center my-space-sm">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="none" r="66" stroke="currentColor" stroke-width="10"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="80" cy="80" fill="none" r="66" stroke="url(#fluencyGrad)" stroke-dasharray="414.7" stroke-dashoffset="66.3" stroke-linecap="round" stroke-width="11"></circle>
+<defs>
+<lineargradient id="fluencyGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ff7a59"></stop>
+<stop offset="100%" stop-color="#ffb4a2"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-score-lg text-label-score-lg text-on-surface tracking-tight">8.4</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">out of 10</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-xs font-semibold">Fluency</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-1">
+          Natural flow with relaxed micro-pauses and clean cadence.
+        </p>
+<div class="mt-space-md w-full pt-space-sm flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps bg-surface-container-low/70 px-space-sm py-1.5 rounded-lg">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">trending_up</span> +0.6 vs yesterday
+          </span>
+<span>Target: 8.0</span>
+</div>
+</div>
+<!-- 2. Grammar & Phrasing Card -->
+<div class="relative group flex flex-col items-center p-space-lg rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-xl transition-all duration-300 hover:bg-surface-container-high/70">
+<!-- SVG Progress Ring (78%) -->
+<div class="relative w-44 h-44 flex items-center justify-center my-space-sm">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="none" r="66" stroke="currentColor" stroke-width="10"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="80" cy="80" fill="none" r="66" stroke="url(#grammarGrad)" stroke-dasharray="414.7" stroke-dashoffset="91.2" stroke-linecap="round" stroke-width="11"></circle>
+<defs>
+<lineargradient id="grammarGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#44e2cd"></stop>
+<stop offset="100%" stop-color="#03c6b2"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-score-lg text-label-score-lg text-on-surface tracking-tight">7.8</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">out of 10</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-xs font-semibold">Grammar &amp; Phrasing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-1">
+          Clear structure; only 2 gentle sentence polishes suggested.
+        </p>
+<div class="mt-space-md w-full pt-space-sm flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps bg-surface-container-low/70 px-space-sm py-1.5 rounded-lg">
+<span class="flex items-center gap-1 text-secondary-fixed">
+<span class="material-symbols-outlined text-sm">check_circle</span> 92% accuracy
+          </span>
+<span>Target: 7.5</span>
+</div>
+</div>
+<!-- 3. Confidence & Tone Card -->
+<div class="relative group flex flex-col items-center p-space-lg rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-xl transition-all duration-300 hover:bg-surface-container-high/70">
+<div class="absolute -top-3 right-6 px-space-xs py-0.5 rounded-full bg-secondary-container/20 text-secondary-fixed font-label-caps text-label-caps uppercase tracking-wider">
+          Best Mastery
+        </div>
+<!-- SVG Progress Ring (91%) -->
+<div class="relative w-44 h-44 flex items-center justify-center my-space-sm">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="none" r="66" stroke="currentColor" stroke-width="10"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="80" cy="80" fill="none" r="66" stroke="url(#confidenceGrad)" stroke-dasharray="414.7" stroke-dashoffset="37.3" stroke-linecap="round" stroke-width="11"></circle>
+<defs>
+<lineargradient id="confidenceGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#cabeff"></stop>
+<stop offset="100%" stop-color="#ff7a59"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-score-lg text-label-score-lg text-on-surface tracking-tight">9.1</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">out of 10</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-space-xs font-semibold">Confidence &amp; Tone</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-1">
+          Warm steady tone with zero hesitation freezing.
+        </p>
+<div class="mt-space-md w-full pt-space-sm flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps bg-surface-container-low/70 px-space-sm py-1.5 rounded-lg">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">bolt</span> Personal Best
+          </span>
+<span>Target: 8.5</span>
+</div>
+</div>
+</div>
+<!-- Summary Metrics Strip -->
+<div class="relative z-10 max-w-4xl mx-auto mt-space-md p-space-md rounded-xl bg-surface-container-low/80 backdrop-blur-md shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md divide-y sm:divide-y-0 sm:divide-x divide-surface-container-highest/60 text-center">
+<div class="flex flex-col items-center justify-center py-1 sm:py-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Total Output</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-score-md text-label-score-md text-on-surface font-bold">342</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">words spoken</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center pt-2 sm:pt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Pace &amp; Rhythm</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-score-md text-label-score-md text-secondary font-bold">128</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">WPM (Optimal Flow)</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center pt-2 sm:pt-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Hesitation Drop</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-score-md text-label-score-md text-primary font-bold">-40%</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">calm silence index</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetrical Split Layout: Improvements (Left) + Priya's Mentor Tip & Visual (Right) -->
+<div class="relative z-10 mt-space-xl max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Top 3 Things to Improve (7 cols) -->
+<div class="lg:col-span-7 flex flex-col p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">auto_fix_high</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">3 Gentle Polishes</h2>
+<p class="font-script-hinglish text-script-hinglish text-secondary-fixed text-sm">
+                छोटी-छोटी बातों से बातचीत में बड़ा फर्क पड़ता है
+              </p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary font-semibold tracking-wider uppercase">
+            Interactive
+          </span>
+</div>
+<!-- Correction Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-sm transition hover:bg-surface-container-high">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-error-container/30 text-error uppercase font-bold">Phrasing Habit</span>
+<span class="text-on-surface-variant text-xs">• 01:24 in session</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap text-on-surface font-medium pt-1">
+<span class="line-through text-outline">"I was went"</span>
+<span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
+<span class="text-secondary font-semibold">"I went to the store"</span>
+</div>
+</div>
+<!-- Native Voice Player Mini Button -->
+<button class="shrink-0 flex items-center gap-1.5 px-space-md py-2 rounded-full bg-surface-container-highest hover:bg-secondary-container/30 text-on-surface transition-all duration-200" onclick="playNativeSnippet(this)" title="Listen to native pronunciation">
+<span class="material-symbols-outlined text-secondary text-lg">volume_up</span>
+<span class="font-body-sm text-body-sm font-medium">Hear Native</span>
+</button>
+</div>
+<!-- Bilingual Coaching Hint Accordion -->
+<div class="mt-space-sm pt-space-xs text-on-surface-variant text-body-sm flex items-start gap-2 bg-surface-container-lowest/50 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">tips_and_updates</span>
+<div>
+<p class="text-on-surface">Use simple past directly when stating completed actions. You don't need "was" before "went".</p>
+<p class="font-script-hinglish text-script-hinglish text-tertiary-fixed text-xs mt-0.5">
+                हिन्दी भाव: "मैं गया था" के लिए केवल "I went" बोलें, "I was went" नहीं।
+              </p>
+</div>
+</div>
+</div>
+<!-- Correction Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-sm transition hover:bg-surface-container-high">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary uppercase font-bold">Natural Preposition</span>
+<span class="text-on-surface-variant text-xs">• 02:45 in session</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap text-on-surface font-medium pt-1">
+<span class="line-through text-outline">"Shopping for buying"</span>
+<span class="material-symbols-outlined text-secondary text-sm">arrow_forward</span>
+<span class="text-secondary font-semibold">"Shopping for vegetables"</span>
+</div>
+</div>
+<button class="shrink-0 flex items-center gap-1.5 px-space-md py-2 rounded-full bg-surface-container-highest hover:bg-secondary-container/30 text-on-surface transition-all duration-200" onclick="playNativeSnippet(this)" title="Listen to native pronunciation">
+<span class="material-symbols-outlined text-secondary text-lg">volume_up</span>
+<span class="font-body-sm text-body-sm font-medium">Hear Native</span>
+</button>
+</div>
+<div class="mt-space-sm pt-space-xs text-on-surface-variant text-body-sm flex items-start gap-2 bg-surface-container-lowest/50 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">tips_and_updates</span>
+<div>
+<p class="text-on-surface">"Shopping" already implies buying. State the items directly: "Shopping for groceries" or "Buying vegetables".</p>
+<p class="font-script-hinglish text-script-hinglish text-tertiary-fixed text-xs mt-0.5">
+                हिन्दी भाव: "सब्ज़ी खरीदने" के लिए सीधा "Shopping for vegetables" कहना अधिक स्वाभाविक लगता है।
+              </p>
+</div>
+</div>
+</div>
+<!-- Correction Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-sm transition hover:bg-surface-container-high">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-primary-container/20 text-primary uppercase font-bold">Phoneme Clarity</span>
+<span class="text-on-surface-variant text-xs">• 03:10 in session</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap text-on-surface font-medium pt-1">
+<span class="text-on-surface">Lip-rounding on <span class="text-primary font-bold">/w/</span> vs teeth-touching <span class="text-secondary font-bold">/v/</span></span>
+</div>
+</div>
+<button class="shrink-0 flex items-center gap-1.5 px-space-md py-2 rounded-full bg-surface-container-highest hover:bg-secondary-container/30 text-on-surface transition-all duration-200" onclick="playNativeSnippet(this)" title="Listen to native pronunciation">
+<span class="material-symbols-outlined text-secondary text-lg">volume_up</span>
+<span class="font-body-sm text-body-sm font-medium">Hear Native</span>
+</button>
+</div>
+<div class="mt-space-sm pt-space-xs text-on-surface-variant text-body-sm flex items-start gap-2 bg-surface-container-lowest/50 p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5">tips_and_updates</span>
+<div>
+<p class="text-on-surface">Round your lips for "Weekend", then gently touch top teeth to lower lip for "Vegetables".</p>
+<p class="font-script-hinglish text-script-hinglish text-tertiary-fixed text-xs mt-0.5">
+                हिन्दी अभ्यास: "W" के लिए होंठ गोल करें, "V" के लिए ऊपर के दांत नीचे के होंठ को छुएं।
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Coach Priya's Next Time Tip & Sanctuary Card (5 cols) -->
+<div class="lg:col-span-5 flex flex-col space-y-space-lg">
+<!-- Priya's Advice Card -->
+<div class="relative p-space-lg rounded-xl bg-gradient-to-br from-surface-container-high/90 via-surface-container to-surface-container-low shadow-2xl overflow-hidden">
+<!-- Luminous Saffron Ambient Ring -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase font-semibold">Tip for Next Time</span>
+</div>
+<span class="font-script-hinglish text-script-hinglish text-xs text-on-surface-variant">अगली बार के लिए सलाह</span>
+</div>
+<div class="relative z-10 mt-space-md flex items-center gap-space-md">
+<img class="w-14 h-14 rounded-full object-cover shadow-lg" data-alt="Warm portrait of Coach Priya, an empathetic Indian language mentor with an encouraging gentle smile, soft natural studio lighting with saffron and deep twilight indigo ambience, wearing minimalist attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHvHQZ-Vm3YAgkU0JMeohEmt-DN_iu906I0tNa6gPafeuFlObQ-IfvkVlCNIpXrffvTd5SaBFzIw03G9D8IbOsPEjrYToTQ4MvbrOahPU6WEnVZ__p1w8686-s_uux1GvHauB8FpJ7kmq7fXKPSithp-YcW8lNp_4sIrdUCF4HPEWvhuSh4BMaRnmGQIk1XGapuTEjj7WZSrfoY_qNuLGM_T1u0MQhXUvbz09Drc"/>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Coach Priya</h4>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Bilingual Fluency Guide</p>
+</div>
+</div>
+<blockquote class="relative z-10 mt-space-md p-space-md rounded-xl bg-surface-container-lowest/60 backdrop-blur-md">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed italic">
+              "Take a deep breath before answering complex questions. In English conversation, a 1-second calm pause sounds thoughtful and confident, not hesitant!"
+            </p>
+<p class="font-script-hinglish text-script-hinglish text-on-surface-variant text-xs mt-2 not-italic">
+              सोचकर बोलने में हिचकिचाहट नहीं, गहराई दिखती है। एक पल रुकना बिल्कुल स्वाभाविक है।
+            </p>
+</blockquote>
+<!-- Audio Voice Note Mini Snippet -->
+<div class="relative z-10 mt-space-md flex items-center justify-between p-2 rounded-full bg-surface-container-highest/80 backdrop-blur-md">
+<div class="flex items-center gap-2 pl-2">
+<button class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-md transition hover:scale-105 active:scale-95" id="priyaAudioBtn" onclick="togglePriyaVoice()" title="Play Priya's encouragement">
+<span class="material-symbols-outlined text-lg leading-none" id="priyaAudioIcon">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold text-xs">Priya's 20-sec voice note</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant" id="priyaDuration">0:20 • Warm guidance</span>
+</div>
+</div>
+<!-- Waveform Visualizer Decor -->
+<div class="flex items-center gap-1 pr-3">
+<span class="w-0.5 h-3 bg-secondary rounded-full animate-pulse"></span>
+<span class="w-0.5 h-6 bg-secondary rounded-full"></span>
+<span class="w-0.5 h-4 bg-secondary rounded-full animate-pulse"></span>
+<span class="w-0.5 h-7 bg-primary rounded-full"></span>
+<span class="w-0.5 h-3 bg-secondary rounded-full"></span>
+</div>
+</div>
+</div>
+<!-- Sanctuary Milestone Mini Card -->
+<div class="relative p-space-md rounded-xl bg-surface-container/60 backdrop-blur-xl flex items-center gap-space-md shadow-lg">
+<img class="w-20 h-20 rounded-lg object-cover shrink-0" data-alt="Serene glowing twilight rangoli geometric artwork with soft orange and turquoise filaments glowing against a dark blue cosmic backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxIOcZOos3G9pRTMdHvKP3SM3a_6h3l2c7PsTsYAndaeN4JfXA7V-ha4sVg1SXOA3CHVg6bhuSnBJnv2F9hZ11TVrZqZcznlqjC0m_mlXOrS5KEQJpwtIodBr3O7y5oXhItCvth6kOeYAvkoWGbi1OiQOCmhSMI7vHm8KNXPKEy1i-PDfDURjC35QlJmODxeDazRt6P8YBWi7w9qavblkBNwG_L-NRuPCjtfENIto"/>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-wider">Level 3 Unlocked</span>
+<h5 class="font-headline-sm text-headline-sm text-on-surface text-base font-semibold">Casual Workplace Chats</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-0.5">
+              You are ready to practice talking to colleagues, chai breaks &amp; weekend plans.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action Dock -->
+<div class="relative z-10 max-w-4xl mx-auto mt-space-xl pt-space-md pb-space-lg flex flex-col items-center space-y-space-md">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full">
+<!-- Primary Action: Practice Again -->
+<a class="group w-full sm:w-auto min-w-[220px] inline-flex items-center justify-center gap-2 px-space-lg py-3.5 rounded-full bg-gradient-to-r from-primary-container to-[#ff9370] text-on-primary-container font-headline-sm text-base font-bold shadow-[0_0_35px_rgba(255,122,89,0.45)] hover:shadow-[0_0_50px_rgba(255,122,89,0.65)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" href="#">
+<span>Practise again</span>
+<span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<!-- Secondary Action: See My Progress -->
+<a class="w-full sm:w-auto min-w-[200px] inline-flex items-center justify-center gap-2 px-space-lg py-3.5 rounded-full bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-headline-sm text-base font-semibold backdrop-blur-md shadow-md hover:text-secondary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg text-tertiary">insights</span>
+<span>See my progress</span>
+</a>
+</div>
+<!-- Tertiary Auxiliary Actions -->
+<div class="flex flex-wrap items-center justify-center gap-space-lg pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<button class="inline-flex items-center gap-1.5 hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-base">share</span>
+<span>Share achievement card</span>
+</button>
+<span class="text-outline-variant">•</span>
+<button class="inline-flex items-center gap-1.5 hover:text-secondary transition-colors duration-150">
+<span class="material-symbols-outlined text-base">graphic_eq</span>
+<span>Review full recording (04:12)</span>
+</button>
+<span class="text-outline-variant">•</span>
+<button class="inline-flex items-center gap-1.5 hover:text-tertiary transition-colors duration-150">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Save summary notes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Audio Feedback Logic -->
+<script>
+    function playNativeSnippet(button) {
+      const icon = button.querySelector('.material-symbols-outlined');
+      const text = button.querySelector('span:last-child');
+      
+      const originalText = text.innerText;
+      icon.innerText = 'graphic_eq';
+      text.innerText = 'Playing...';
+      button.classList.add('bg-secondary-container/40', 'text-secondary');
+
+      setTimeout(() => {
+        icon.innerText = 'volume_up';
+        text.innerText = originalText;
+        button.classList.remove('bg-secondary-container/40', 'text-secondary');
+      }, 1800);
+    }
+
+    let isPriyaPlaying = false;
+    function togglePriyaVoice() {
+      const icon = document.getElementById('priyaAudioIcon');
+      const duration = document.getElementById('priyaDuration');
+      isPriyaPlaying = !isPriyaPlaying;
+      
+      if (isPriyaPlaying) {
+        icon.innerText = 'pause';
+        duration.innerText = 'Listening to mentor...';
+      } else {
+        icon.innerText = 'play_arrow';
+        duration.innerText = '0:20 • Warm guidance';
+      }
+    }
+  </script>
+</div></main><footer class="relative z-10 w-full bg-surface-container-lowest/80 backdrop-blur-xl py-space-lg"><div class="w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-['Fraunces'] text-lg font-bold text-on-surface">Bol</span><span class="font-body-sm text-body-sm text-on-surface-variant">— Peaceful sanctuary for English fluency</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Pronunciation Vault</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Hinglish Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Voice Safety</a></div><div class="font-label-caps text-label-caps text-on-surface-variant/70">© 2024 Bol. Designed for Hindi-speaking aspirants.</div></div></footer></body></html>

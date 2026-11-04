@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1030;
+  --color-surface: #0f1030;
+  --color-surface-dim: #0f1030;
+  --color-surface-bright: #353658;
+  --color-surface-variant: #313253;
+  --color-surface-container-lowest: #090a2a;
+  --color-surface-container-low: #171838;
+  --color-surface-container: #1b1c3c;
+  --color-surface-container-high: #262747;
+  --color-surface-container-highest: #313253;
+
+  --color-primary: #ffb4a2;
+  --color-primary-container: #ff7a59;
+  --color-primary-fixed: #ffdad2;
+  --color-primary-fixed-dim: #ffb4a2;
+  --color-on-primary: #621100;
+  --color-on-primary-container: #701500;
+  --color-on-primary-fixed: #3c0700;
+  --color-on-primary-fixed-variant: #862208;
+  --color-inverse-primary: #a7391e;
+
+  --color-secondary: #44e2cd;
+  --color-secondary-container: #03c6b2;
+  --color-secondary-fixed: #62fae3;
+  --color-secondary-fixed-dim: #3cddc7;
+  --color-on-secondary: #003731;
+  --color-on-secondary-container: #004d44;
+  --color-on-secondary-fixed: #00201c;
+  --color-on-secondary-fixed-variant: #005047;
+
+  --color-tertiary: #cabeff;
+  --color-tertiary-container: #a596eb;
+  --color-tertiary-fixed: #e6deff;
+  --color-tertiary-fixed-dim: #cabeff;
+  --color-on-tertiary: #322270;
+  --color-on-tertiary-container: #3a2b78;
+  --color-on-tertiary-fixed: #1c055b;
+  --color-on-tertiary-fixed-variant: #493a88;
+
+  --color-on-background: #e1e0ff;
+  --color-on-surface: #e1e0ff;
+  --color-on-surface-variant: #dfc0b8;
+  --color-inverse-surface: #e1e0ff;
+  --color-inverse-on-surface: #2c2d4e;
+
+  --color-outline: #a68b84;
+  --color-outline-variant: #58423c;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  --font-fraunces: 'Fraunces', serif;
+  --font-epilogue: 'Epilogue', sans-serif;
+  --font-display-hero: 'Epilogue', sans-serif;
+  --font-body-md: 'Plus Jakarta Sans', sans-serif;
+  --font-body-lg: 'Plus Jakarta Sans', sans-serif;
+  --font-body-sm: 'Plus Jakarta Sans', sans-serif;
+  --font-label-score-lg: 'Space Grotesk', sans-serif;
+  --font-label-score-md: 'Space Grotesk', sans-serif;
+  --font-label-caps: 'Space Grotesk', sans-serif;
+  --font-script-hinglish: 'Noto Sans', sans-serif;
+  --font-headline-lg: 'Epilogue', sans-serif;
+  --font-headline-md: 'Epilogue', sans-serif;
+  --font-headline-sm: 'Epilogue', sans-serif;
+}
+
+/* Custom Spacing & Utilities */
+:root {
+  --gutter: 1rem;
+  --gutter-tablet: 1.5rem;
+  --gutter-desktop: 2rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --margin-desktop: 3rem;
+  --margin-tablet: 2rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f1030;
+  color: #e1e0ff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Material Symbols icon utility */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Pulsing audio wave keyframes */
+@keyframes orb-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-orb-pulse {
+  animation: orb-pulse 2.5s ease-in-out infinite;
+}

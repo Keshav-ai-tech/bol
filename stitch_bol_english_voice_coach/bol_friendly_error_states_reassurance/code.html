@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#62fae3", "on-surface-variant": "#dfc0b8", "on-primary": "#621100", "on-secondary": "#003731", "surface-container-highest": "#313253", "on-tertiary": "#322270", "background": "#0f1030", "on-error-container": "#ffdad6", "tertiary": "#cabeff", "on-error": "#690005", "tertiary-container": "#a596eb", "surface-container": "#1b1c3c", "surface": "#0f1030", "surface-variant": "#313253", "on-tertiary-fixed": "#1c055b", "error-container": "#93000a", "error": "#ffb4ab", "primary-fixed": "#ffdad2", "surface-dim": "#0f1030", "on-tertiary-fixed-variant": "#493a88", "secondary-fixed-dim": "#3cddc7", "on-surface": "#e1e0ff", "primary": "#ffb4a2", "on-background": "#e1e0ff", "tertiary-fixed-dim": "#cabeff", "secondary": "#44e2cd", "outline": "#a68b84", "on-secondary-fixed-variant": "#005047", "outline-variant": "#58423c", "primary-container": "#ff7a59", "surface-container-high": "#262747", "on-primary-fixed": "#3c0700", "on-primary-fixed-variant": "#862208", "surface-tint": "#ffb4a2", "inverse-on-surface": "#2c2d4e", "surface-container-low": "#171838", "on-primary-container": "#701500", "secondary-container": "#03c6b2", "on-secondary-fixed": "#00201c", "on-tertiary-container": "#3a2b78", "primary-fixed-dim": "#ffb4a2", "inverse-primary": "#a7391e", "surface-bright": "#353658", "surface-container-lowest": "#090a2a", "on-secondary-container": "#004d44", "inverse-surface": "#e1e0ff", "tertiary-fixed": "#e6deff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2.5rem", "gutter": "1rem", "margin": "1.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter-desktop": "2rem", "margin-desktop": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, fontFamily: { "body-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Epilogue"], "label-score-md": ["Space Grotesk"], "headline-lg": ["Epilogue"], "label-caps": ["Space Grotesk"], "headline-lg-mobile": ["Epilogue"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Epilogue"], "headline-sm": ["Epilogue"], "display-hero": ["Epilogue"], "label-score-lg": ["Space Grotesk"], "script-hinglish": ["Noto Sans"], "body-sm": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-score-md": ["18px", { "lineHeight": "22px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-score-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "script-hinglish": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-primary-container/20 blur-[130px]"></div><div class="absolute top-1/3 -right-24 w-[30rem] h-[30rem] rounded-full bg-tertiary-container/15 blur-[140px]"></div><div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-secondary-container/15 blur-[120px]"></div></div><header class="fixed top-0 w-full z-50 bg-surface-container/60 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.35)]"><div class="h-20 w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm group" data-path="bol-orb" href="#"><img alt="Bol App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xqs5kOlOg20kYmkPparDpBI6ChWUrMoRYAiDX3FTMQzzu13Kn0wTHgdCiiY5gU-fKsv-Rf8RHq7N1yrfjmyp29qSEvYmdvwxTH-ETqvYJm5GZ3zjZLl17Kzcqb1zI4rVRTawOjmHz0jmRL3B1NIXo9KMezycU3SzDLwV0K-LWhxdeJzXWVVSgbQ9pls8dVR8MLP_TzWNG87rqgpAhlGMNxjR_SukXTgJfz9wsIppOD"/><div class="flex items-center"><span class="font-['Fraunces'] text-2xl font-bold tracking-tight text-on-surface">Bol</span><span class="w-2 h-2 ml-1 rounded-full bg-primary-container shadow-[0_0_12px_#ff7a59]"></span></div></a></div><nav class="hidden xl:flex items-center p-1 rounded-full bg-surface-container-low/70 backdrop-blur-md" data-active-classes="bg-surface-container-highest text-on-surface shadow-[0_0_20px_rgba(68,226,205,0.15)]"><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="bol-orb" href="#">Practice Orb</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="daily-topics" href="#">Daily Topics</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="gentle-feedback-and-history" href="#">Gentle Feedback &amp; History</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="fluency-progress" href="#">Fluency Progress</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md shrink-0"><div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high/80 text-on-surface"><span class="material-symbols-outlined text-primary text-base leading-none">local_fire_department</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-bold">14 Days</span></div><button class="flex items-center justify-center h-8 px-2.5 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors" title="Toggle Hindi/English" type="button"><span class="font-script-hinglish text-script-hinglish text-secondary leading-none font-medium">A/अ</span></button><button class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors text-on-surface-variant hover:text-on-surface" title="Audio and Mic Settings" type="button"><span class="material-symbols-outlined text-lg leading-none">tune</span></button><div class="flex items-center gap-space-xs pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWEywrzynyWhymxrFD5Jaj6fPbCZanPAj35Va9ItC4pq2nANCZ9CtHilLWeRfrrSkp6ONiHm28Qph6seqqV1lg4ljmt1cJytjlAKdXQrkNApEghM2FtgqocYlcisHEZd_BJcKlF7zakIHa5k6PyN8UK0o00NdS9OcBNLqOQAgoFop2VobuXV7tfXh2BWQbf1XeW5OFyiDQsqvoYi8n6QkSbDC5c84rvFTT9mBlQk"/><span class="hidden md:inline font-body-sm text-body-sm font-medium text-on-surface">Aarav</span></div></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-gutter md:px-margin-tablet lg:px-margin-desktop py-space-xl">
+<!-- Top Sanctuary Header Area -->
+<div class="relative mb-space-xl text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container-high/60 backdrop-blur-md mb-space-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Shanti Sanctuary • Troubleshooting</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl text-balance">
+        Gentle check-ins for smooth spoken practice
+      </h1>
+<p class="font-script-hinglish text-script-hinglish text-tertiary-fixed max-w-xl mt-space-xs text-balance">
+        कोई गलती नहीं, बस एक छोटी सी रुकावट। Bol is right beside you at every step.
+      </p>
+<!-- Interactive State Filter Tabs -->
+<div class="mt-space-lg inline-flex p-1.5 rounded-full bg-surface-container-low/90 backdrop-blur-xl shadow-lg">
+<button class="state-tab-btn active px-space-md py-2 rounded-full font-body-sm text-body-sm transition-all duration-300 bg-surface-container-highest text-on-surface shadow-md" id="tab-all" onclick="switchTroubleView('all')">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">dashboard_customize</span>
+            All 3 States (Overview)
+          </span>
+</button>
+<button class="state-tab-btn px-space-md py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all duration-300" id="tab-mic" onclick="switchTroubleView('mic')">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-primary">mic_off</span>
+            Microphone Access
+          </span>
+</button>
+<button class="state-tab-btn px-space-md py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all duration-300" id="tab-audio" onclick="switchTroubleView('audio')">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-tertiary">hearing</span>
+            Acoustic Clarity
+          </span>
+</button>
+<button class="state-tab-btn px-space-md py-2 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all duration-300" id="tab-net" onclick="switchTroubleView('net')">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">wifi_off</span>
+            Offline Mode
+          </span>
+</button>
+</div>
+</div>
+<!-- Cards Grid Container -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch transition-all duration-500" id="states-grid">
+<!-- STATE 1: Microphone Permission Needed -->
+<div class="trouble-card flex flex-col justify-between rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl relative overflow-hidden group hover:bg-surface-container-high/80 transition-all duration-300" id="card-mic">
+<!-- Ambient Saffron-Rose Backlight glow -->
+<div class="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-primary-container/20 blur-[80px] pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-tertiary-container/15 blur-[70px] pointer-events-none"></div>
+<div>
+<!-- Badge and Number Indicator -->
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-primary-container/20 text-primary uppercase font-bold tracking-wider">
+              Status 01 • Permission
+            </span>
+<span class="font-label-score-md text-label-score-md text-on-surface-variant/40">०१</span>
+</div>
+<!-- Luminous 3D Microphone Visual -->
+<div class="relative w-full h-44 rounded-lg bg-surface-container-lowest/80 flex items-center justify-center overflow-hidden mb-space-md shadow-inner">
+<!-- Rangoli filigree radial SVG background -->
+<svg class="absolute inset-0 w-full h-full opacity-15" fill="none" viewbox="0 0 300 160">
+<circle class="text-tertiary" cx="150" cy="80" r="70" stroke="currentColor" stroke-dasharray="3 3" stroke-width="0.5"></circle>
+<circle class="text-primary" cx="150" cy="80" r="45" stroke="currentColor" stroke-width="0.75"></circle>
+<path class="text-tertiary-container" d="M150 10 L150 150 M80 80 L220 80 M100 30 L200 130 M100 130 L200 30" stroke="currentColor" stroke-width="0.4"></path>
+</svg>
+<!-- Luminous Orb & Mic with Floating Lock Shield -->
+<div class="relative flex items-center justify-center">
+<!-- Radiant pulsing ring -->
+<div class="absolute w-24 h-24 rounded-full bg-gradient-to-tr from-primary-container/30 to-tertiary-container/30 blur-md animate-pulse"></div>
+<!-- Core Soft 3D Mic Sphere -->
+<div class="relative w-20 h-20 rounded-full bg-gradient-to-b from-surface-container-high to-surface-container-lowest flex items-center justify-center shadow-[0_0_25px_rgba(255,180,162,0.25)]">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<!-- Floating Lavender Lock / Shield Badge -->
+<div class="absolute -top-1 -right-2 px-2 py-1 rounded-full bg-tertiary-container text-on-tertiary flex items-center gap-1 shadow-[0_4px_12px_rgba(165,150,235,0.4)] transform hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm font-bold">lock</span>
+<span class="font-label-caps text-label-caps">Allow</span>
+</div>
+</div>
+</div>
+<!-- Title & Bilingual Comfort Copy -->
+<div class="space-y-space-xs mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Microphone permission needed
+            </h2>
+<p class="font-script-hinglish text-script-hinglish text-secondary">
+              माइक्रोफ़ोन अनुमति चाहिए
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+              Bol needs your microphone to hear your voice clearly. No voice recordings are ever stored or shared without your active consent.
+            </p>
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 text-on-surface-variant font-script-hinglish text-body-sm leading-normal">
+              आपकी आवाज़ सुरक्षित है — बस ब्राउज़र एड्रेस बार में <span class="text-primary font-medium">‘Allow’</span> पर क्लिक करें।
+            </div>
+</div>
+<!-- Step-by-Step 2-Step Miniature Visual Hint -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 space-y-2 mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold shrink-0">1</div>
+<span class="font-body-sm text-body-sm text-on-surface flex items-center gap-1">
+                Click lock <span class="material-symbols-outlined text-sm text-tertiary">lock</span> in address bar
+              </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-secondary/20 text-secondary flex items-center justify-center text-xs font-bold shrink-0">2</div>
+<span class="font-body-sm text-body-sm text-on-surface flex items-center gap-1">
+                Set Microphone to <span class="text-secondary font-medium">‘Allow’</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-3 px-space-md rounded-full bg-gradient-to-r from-primary-container to-primary text-on-primary font-body-sm font-semibold shadow-[0_0_20px_rgba(255,122,89,0.3)] hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">mic</span>
+            Enable Microphone
+          </button>
+<button class="w-full py-2.5 px-space-md rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface font-body-sm transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base text-tertiary">graphic_eq</span>
+            Test Audio First
+          </button>
+</div>
+</div>
+<!-- STATE 2: Couldn't Hear You -->
+<div class="trouble-card flex flex-col justify-between rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl relative overflow-hidden group hover:bg-surface-container-high/80 transition-all duration-300" id="card-audio">
+<!-- Ambient Lavender & Coral Glow -->
+<div class="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-tertiary-container/20 blur-[80px] pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-secondary-container/15 blur-[70px] pointer-events-none"></div>
+<div>
+<!-- Badge and Number Indicator -->
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-tertiary-container/20 text-tertiary uppercase font-bold tracking-wider">
+              Status 02 • Voice Level
+            </span>
+<span class="font-label-score-md text-label-score-md text-on-surface-variant/40">०२</span>
+</div>
+<!-- Luminous 3D Acoustic Waveform & Ear Visual -->
+<div class="relative w-full h-44 rounded-lg bg-surface-container-lowest/80 flex items-center justify-center overflow-hidden mb-space-md shadow-inner">
+<!-- Concentric ripples SVG -->
+<svg class="absolute inset-0 w-full h-full opacity-25" fill="none" viewbox="0 0 300 160">
+<circle class="text-tertiary" cx="150" cy="80" r="28" stroke="currentColor" stroke-width="1.5"></circle>
+<circle class="text-secondary" cx="150" cy="80" r="48" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle class="text-tertiary-fixed" cx="150" cy="80" r="68" stroke="currentColor" stroke-width="0.5"></circle>
+</svg>
+<!-- Soundwave ribbon animation simulation -->
+<div class="flex items-center gap-1.5 h-16 z-10">
+<span class="w-1.5 h-6 rounded-full bg-tertiary/40"></span>
+<span class="w-1.5 h-10 rounded-full bg-tertiary/60"></span>
+<span class="w-1.5 h-14 rounded-full bg-secondary/80"></span>
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-tertiary-container to-secondary-container flex items-center justify-center shadow-[0_0_25px_rgba(165,150,235,0.35)] mx-1">
+<span class="material-symbols-outlined text-3xl text-on-tertiary" style="font-variation-settings: 'FILL' 1;">hearing</span>
+</div>
+<span class="w-1.5 h-14 rounded-full bg-secondary/80"></span>
+<span class="w-1.5 h-10 rounded-full bg-tertiary/60"></span>
+<span class="w-1.5 h-6 rounded-full bg-tertiary/40"></span>
+</div>
+<!-- Gentle breathing prompt chip -->
+<div class="absolute bottom-2 px-2.5 py-0.5 rounded-full bg-surface-container/90 text-on-surface-variant font-label-caps text-label-caps">
+              Listening softly...
+            </div>
+</div>
+<!-- Title & Bilingual Comfort Copy -->
+<div class="space-y-space-xs mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Couldn't hear you, let's try again
+            </h2>
+<p class="font-script-hinglish text-script-hinglish text-secondary">
+              आवाज़ साफ़ सुनाई नहीं दी
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+              It was a bit too quiet or fast. Take a relaxed breath and speak whenever you're ready — there is genuinely no rush at all.
+            </p>
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 text-on-surface-variant font-script-hinglish text-body-sm leading-normal">
+              आराम से गहरी सांस लीजिए और अपनी रफ्तार में बोलिए — आप बिल्कुल सही कर रहे हैं।
+            </div>
+</div>
+<!-- Helpful Soft Checklist Chips -->
+<div class="space-y-1.5 mb-space-md">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest/60 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary">check_circle</span>
+<span>Check if physical headset is unmuted</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest/60 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary">check_circle</span>
+<span>Move a little closer to device</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest/60 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary">check_circle</span>
+<span>Background fan or street noise check</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-3 px-space-md rounded-full bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-body-sm font-semibold shadow-[0_0_20px_rgba(68,226,205,0.25)] hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">mic_none</span>
+            Tap to Speak Again
+          </button>
+<button class="w-full py-2.5 px-space-md rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface font-body-sm transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base text-secondary">translate</span>
+            Switch to Hinglish Hints
+          </button>
+</div>
+</div>
+<!-- STATE 3: You're Offline Right Now -->
+<div class="trouble-card flex flex-col justify-between rounded-xl bg-surface-container/70 backdrop-blur-2xl p-space-lg shadow-xl relative overflow-hidden group hover:bg-surface-container-high/80 transition-all duration-300" id="card-net">
+<!-- Ambient Deep Violet & Teal Glow -->
+<div class="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-secondary-container/20 blur-[80px] pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-tertiary-container/15 blur-[70px] pointer-events-none"></div>
+<div>
+<!-- Badge and Number Indicator -->
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary uppercase font-bold tracking-wider">
+              Status 03 • Connectivity
+            </span>
+<span class="font-label-score-md text-label-score-md text-on-surface-variant/40">०३</span>
+</div>
+<!-- Luminous 3D Cloud / Satellite Resting Visual -->
+<div class="relative w-full h-44 rounded-lg bg-surface-container-lowest/80 flex items-center justify-center overflow-hidden mb-space-md shadow-inner">
+<!-- Satellite Orbit lines -->
+<svg class="absolute inset-0 w-full h-full opacity-20" fill="none" viewbox="0 0 300 160">
+<ellipse class="text-secondary" cx="150" cy="80" rx="90" ry="40" stroke="currentColor" stroke-dasharray="3 3" stroke-width="0.75"></ellipse>
+<ellipse class="text-tertiary" cx="150" cy="80" rx="60" ry="25" stroke="currentColor" stroke-width="0.5"></ellipse>
+</svg>
+<!-- Luminous Peaceful Cloud / Satellite Icon -->
+<div class="relative flex items-center justify-center">
+<div class="absolute w-24 h-24 rounded-full bg-gradient-to-tr from-secondary-container/20 to-tertiary-container/20 blur-md"></div>
+<div class="relative w-20 h-20 rounded-full bg-gradient-to-b from-surface-container-high to-surface-container-lowest flex items-center justify-center shadow-[0_0_25px_rgba(68,226,205,0.2)]">
+<span class="material-symbols-outlined text-4xl text-secondary-fixed-dim">cloud_off</span>
+</div>
+<!-- Reassuring Saved Pill Badge -->
+<div class="absolute -bottom-2 px-3 py-0.5 rounded-full bg-surface-container-highest text-secondary text-xs flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-xs text-secondary">verified_user</span>
+<span class="font-label-caps text-label-caps font-bold">14-Day Streak Safe</span>
+</div>
+</div>
+</div>
+<!-- Title & Bilingual Comfort Copy -->
+<div class="space-y-space-xs mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              You're offline right now
+            </h2>
+<p class="font-script-hinglish text-script-hinglish text-secondary">
+              इंटरनेट कनेक्शन नहीं है
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+              Your internet took a quick break. Don't worry, your 14-day practice streak and current lesson metrics are securely stored on your device.
+            </p>
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 text-on-surface-variant font-script-hinglish text-body-sm leading-normal">
+              फिक्र मत कीजिए, आपकी स्ट्रीक और प्रैक्टिस सुरक्षित है — जब चाहें ऑफलाइन पढ़ें।
+            </div>
+</div>
+<!-- Local storage cache indicator -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 space-y-2 mb-space-md">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-secondary">save</span>
+                Local Progress Cache
+              </span>
+<span class="font-label-score-md text-secondary text-sm">100% Synced</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<button class="w-full py-3 px-space-md rounded-full bg-gradient-to-r from-tertiary-container to-tertiary text-on-tertiary font-body-sm font-semibold shadow-[0_0_20px_rgba(202,190,255,0.25)] hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">refresh</span>
+            Reconnect &amp; Retry
+          </button>
+<button class="w-full py-2.5 px-space-md rounded-full bg-surface-container-high/60 hover:bg-surface-container-highest text-on-surface font-body-sm transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base text-primary">style</span>
+            Pronunciation Vault (Offline)
+          </button>
+</div>
+</div>
+</div>
+<!-- Reassurance Bento Tile (Errors are not failures) -->
+<div class="mt-space-xl rounded-xl bg-surface-container-low/80 backdrop-blur-xl p-space-lg shadow-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">
+            Remember: Stumbling is part of speaking
+          </h3>
+<p class="font-script-hinglish text-script-hinglish text-on-surface-variant text-sm">
+            यहाँ सीखने में कोई झिझक नहीं है। Bol is your private space to pause, breathe, and begin whenever you wish.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2 rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-bright font-body-sm transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">contact_support</span>
+          Ask Bol Mentor
+        </button>
+<button class="px-space-md py-2 rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-bright font-body-sm transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-sm text-tertiary">settings_voice</span>
+          Mic Calibrator
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Tab Filter Script -->
+<script>
+    function switchTroubleView(state) {
+      const cards = {
+        mic: document.getElementById('card-mic'),
+        audio: document.getElementById('card-audio'),
+        net: document.getElementById('card-net')
+      };
+      
+      const tabs = {
+        all: document.getElementById('tab-all'),
+        mic: document.getElementById('tab-mic'),
+        audio: document.getElementById('tab-audio'),
+        net: document.getElementById('tab-net')
+      };
+
+      // Reset Tab Styles
+      Object.keys(tabs).forEach(key => {
+        tabs[key].classList.remove('bg-surface-container-highest', 'text-on-surface', 'shadow-md');
+        tabs[key].classList.add('text-on-surface-variant');
+      });
+
+      // Highlight active tab
+      tabs[state].classList.add('bg-surface-container-highest', 'text-on-surface', 'shadow-md');
+      tabs[state].classList.remove('text-on-surface-variant');
+
+      // Grid Layout Adjustments
+      const grid = document.getElementById('states-grid');
+      
+      if (state === 'all') {
+        grid.className = 'grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch transition-all duration-500';
+        Object.values(cards).forEach(c => {
+          c.classList.remove('hidden');
+          c.classList.add('flex');
+        });
+      } else {
+        grid.className = 'grid grid-cols-1 max-w-xl mx-auto gap-space-lg items-stretch transition-all duration-500';
+        Object.keys(cards).forEach(key => {
+          if (key === state) {
+            cards[key].classList.remove('hidden');
+            cards[key].classList.add('flex');
+          } else {
+            cards[key].classList.add('hidden');
+            cards[key].classList.remove('flex');
+          }
+        });
+      }
+    }
+  </script>
+</div></main><footer class="relative z-10 w-full bg-surface-container-lowest/80 backdrop-blur-xl py-space-lg"><div class="w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-['Fraunces'] text-lg font-bold text-on-surface">Bol</span><span class="font-body-sm text-body-sm text-on-surface-variant">— Peaceful sanctuary for English fluency</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Pronunciation Vault</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Hinglish Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Voice Safety</a></div><div class="font-label-caps text-label-caps text-on-surface-variant/70">© 2024 Bol. Designed for Hindi-speaking aspirants.</div></div></footer></body></html>

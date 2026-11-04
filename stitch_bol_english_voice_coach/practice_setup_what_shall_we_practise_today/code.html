@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed": "#62fae3", "on-surface-variant": "#dfc0b8", "on-primary": "#621100", "on-secondary": "#003731", "surface-container-highest": "#313253", "on-tertiary": "#322270", "background": "#0f1030", "on-error-container": "#ffdad6", "tertiary": "#cabeff", "on-error": "#690005", "tertiary-container": "#a596eb", "surface-container": "#1b1c3c", "surface": "#0f1030", "surface-variant": "#313253", "on-tertiary-fixed": "#1c055b", "error-container": "#93000a", "error": "#ffb4ab", "primary-fixed": "#ffdad2", "surface-dim": "#0f1030", "on-tertiary-fixed-variant": "#493a88", "secondary-fixed-dim": "#3cddc7", "on-surface": "#e1e0ff", "primary": "#ffb4a2", "on-background": "#e1e0ff", "tertiary-fixed-dim": "#cabeff", "secondary": "#44e2cd", "outline": "#a68b84", "on-secondary-fixed-variant": "#005047", "outline-variant": "#58423c", "primary-container": "#ff7a59", "surface-container-high": "#262747", "on-primary-fixed": "#3c0700", "on-primary-fixed-variant": "#862208", "surface-tint": "#ffb4a2", "inverse-on-surface": "#2c2d4e", "surface-container-low": "#171838", "on-primary-container": "#701500", "secondary-container": "#03c6b2", "on-secondary-fixed": "#00201c", "on-tertiary-container": "#3a2b78", "primary-fixed-dim": "#ffb4a2", "inverse-primary": "#a7391e", "surface-bright": "#353658", "surface-container-lowest": "#090a2a", "on-secondary-container": "#004d44", "inverse-surface": "#e1e0ff", "tertiary-fixed": "#e6deff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2.5rem", "gutter": "1rem", "margin": "1.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "gutter-desktop": "2rem", "margin-desktop": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, fontFamily: { "body-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Epilogue"], "label-score-md": ["Space Grotesk"], "headline-lg": ["Epilogue"], "label-caps": ["Space Grotesk"], "headline-lg-mobile": ["Epilogue"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Epilogue"], "headline-sm": ["Epilogue"], "display-hero": ["Epilogue"], "label-score-lg": ["Space Grotesk"], "script-hinglish": ["Noto Sans"], "body-sm": ["Plus Jakarta Sans"] }, fontSize: { "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-score-md": ["18px", { "lineHeight": "22px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-score-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "script-hinglish": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container"><div class="fixed inset-0 pointer-events-none z-0"><div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-primary-container/20 blur-[130px]"></div><div class="absolute top-1/3 -right-24 w-[30rem] h-[30rem] rounded-full bg-tertiary-container/15 blur-[140px]"></div><div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-secondary-container/15 blur-[120px]"></div></div><header class="fixed top-0 w-full z-50 bg-surface-container/60 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.35)]"><div class="h-20 w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm group" data-path="bol-orb" href="#"><img alt="Bol App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xqs5kOlOg20kYmkPparDpBI6ChWUrMoRYAiDX3FTMQzzu13Kn0wTHgdCiiY5gU-fKsv-Rf8RHq7N1yrfjmyp29qSEvYmdvwxTH-ETqvYJm5GZ3zjZLl17Kzcqb1zI4rVRTawOjmHz0jmRL3B1NIXo9KMezycU3SzDLwV0K-LWhxdeJzXWVVSgbQ9pls8dVR8MLP_TzWNG87rqgpAhlGMNxjR_SukXTgJfz9wsIppOD"/><div class="flex items-center"><span class="font-['Fraunces'] text-2xl font-bold tracking-tight text-on-surface">Bol</span><span class="w-2 h-2 ml-1 rounded-full bg-primary-container shadow-[0_0_12px_#ff7a59]"></span></div></a><div class="hidden md:flex items-center gap-space-xs pl-space-sm border-l border-surface-container-highest/60"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Sanctuary Mode</span><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span></div></div><nav class="hidden xl:flex items-center p-1 rounded-full bg-surface-container-low/70 backdrop-blur-md" data-active-classes="bg-surface-container-highest text-on-surface shadow-[0_0_20px_rgba(68,226,205,0.15)]"><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="practice-setup-onboarding" href="#">Practice Setup</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="bol-orb" href="#">Practice Orb</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="daily-topics" href="#">Daily Topics</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="gentle-feedback-and-history" href="#">Gentle Feedback &amp; History</a><a class="px-space-md py-space-xs rounded-full font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="fluency-progress" href="#">Fluency Progress</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md shrink-0"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low/90"><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span></div><span class="font-label-caps text-label-caps text-on-surface-variant">Step 2/3</span></div><div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high/80 text-on-surface"><span class="material-symbols-outlined text-primary text-base leading-none">local_fire_department</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-bold">14 Days</span></div><button class="flex items-center justify-center h-8 px-2.5 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors" title="Toggle Hindi/English" type="button"><span class="font-script-hinglish text-script-hinglish text-secondary leading-none font-medium">A/अ</span></button><button class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container-highest transition-colors text-on-surface-variant hover:text-on-surface" title="Audio and Mic Settings" type="button"><span class="material-symbols-outlined text-lg leading-none">tune</span></button><div class="flex items-center gap-space-xs pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrWEywrzynyWhymxrFD5Jaj6fPbCZanPAj35Va9ItC4pq2nANCZ9CtHilLWeRfrrSkp6ONiHm28Qph6seqqV1lg4ljmt1cJytjlAKdXQrkNApEghM2FtgqocYlcisHEZd_BJcKlF7zakIHa5k6PyN8UK0o00NdS9OcBNLqOQAgoFop2VobuXV7tfXh2BWQbf1XeW5OFyiDQsqvoYi8n6QkSbDC5c84rvFTT9mBlQk"/><span class="hidden md:inline font-body-sm text-body-sm font-medium text-on-surface">Aarav</span></div></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full relative">
+<!-- Subtle Rangoli Geometrics & Background Filigree -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden select-none -z-10">
+<svg class="absolute top-12 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] opacity-[0.08]" fill="none" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<circle cx="400" cy="300" r="120" stroke="#cabeff" stroke-dasharray="4 8" stroke-width="0.75"></circle>
+<circle cx="400" cy="300" r="220" stroke="#44e2cd" stroke-width="0.5"></circle>
+<circle cx="400" cy="300" r="320" stroke="#ffb4a2" stroke-dasharray="2 12" stroke-width="0.5"></circle>
+<path d="M 400 60 L 400 540 M 160 300 L 640 300" opacity="0.6" stroke="#cabeff" stroke-width="0.5"></path>
+<path d="M 230 130 L 570 470 M 230 470 L 570 130" stroke="#cabeff" stroke-dasharray="6 6" stroke-width="0.3"></path>
+<circle cx="400" cy="180" fill="#ff7a59" r="6"></circle>
+<circle cx="400" cy="420" fill="#ff7a59" r="6"></circle>
+<circle cx="280" cy="300" fill="#44e2cd" r="6"></circle>
+<circle cx="520" cy="300" fill="#44e2cd" r="6"></circle>
+<polygon fill="none" points="400,240 460,300 400,360 340,300" stroke="#cabeff" stroke-width="0.5"></polygon>
+</svg>
+<div class="absolute -top-10 left-1/3 w-80 h-80 rounded-full bg-primary-container/15 blur-[120px]"></div>
+<div class="absolute top-1/2 right-10 w-96 h-96 rounded-full bg-secondary-container/10 blur-[130px]"></div>
+<div class="absolute bottom-10 left-12 w-80 h-80 rounded-full bg-tertiary-container/15 blur-[140px]"></div>
+</div>
+<div class="w-full max-w-6xl mx-auto px-gutter md:px-margin-tablet lg:px-margin-desktop pt-6 pb-36 flex flex-col gap-space-xl">
+<!-- Top Step Calibration Status Bar -->
+<section class="flex flex-col sm:flex-row items-center justify-between gap-space-md w-full">
+<div class="flex items-center gap-space-sm bg-surface-container-low/80 backdrop-blur-xl px-4 py-2 rounded-full shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<div class="w-6 h-2.5 rounded-full bg-primary-container shadow-[0_0_10px_#ff7a59]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+</div>
+<span class="font-label-caps text-label-caps tracking-widest text-on-surface uppercase pl-1">Step 2 of 3</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-sm text-body-sm text-secondary">Level &amp; Practice Realm</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high/90 shadow-md">
+<span class="material-symbols-outlined text-secondary text-base leading-none" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="font-label-caps text-label-caps text-on-surface tracking-wider uppercase font-semibold">Practice Calibration</span>
+<span class="text-outline text-xs">/</span>
+<span class="font-script-hinglish text-script-hinglish text-primary-fixed text-xs">आज का अभ्यास तय करें</span>
+</div>
+</section>
+<!-- Header Section with Fraunces Display Typo -->
+<section class="flex flex-col gap-3 text-center sm:text-left max-w-3xl">
+<div class="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+<span class="font-['Fraunces'] text-display-hero text-on-surface font-bold tracking-tight">What shall we</span>
+<span class="font-['Fraunces'] text-display-hero italic font-bold tracking-tight bg-gradient-to-r from-primary via-primary-container to-secondary bg-clip-text text-transparent drop-shadow-sm">practise</span>
+<span class="font-['Fraunces'] text-display-hero text-on-surface font-bold tracking-tight">today?</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Choose your comfort level and focus area. Bol adapts its pace, cadence, and vocabulary naturally to your rhythm.
+      </p>
+<div class="flex items-center justify-center sm:justify-start gap-2 pt-1">
+<span class="material-symbols-outlined text-tertiary text-sm">spa</span>
+<p class="font-script-hinglish text-script-hinglish text-tertiary-fixed font-medium">अपनी पसंद का स्तर और विषय चुनें — कोई जल्दबाजी नहीं, पूरी स्वतंत्रता।</p>
+</div>
+</section>
+<!-- Section 1: Proficiency & Guidance Level -->
+<section aria-labelledby="level-heading" class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Phase 01</span>
+<span class="text-outline-variant text-xs">/</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="level-heading">Language Comfort Level</h2>
+</div>
+<span class="hidden sm:inline-block font-label-caps text-label-caps text-on-surface-variant">Switch anytime mid-call</span>
+</div>
+<div aria-label="Proficiency Level" class="grid grid-cols-1 md:grid-cols-2 gap-space-lg" role="radiogroup">
+<!-- Card 1: Beginner (Hinglish hints) [Selected State] -->
+<div aria-checked="true" class="level-card group relative p-space-lg rounded-3xl bg-surface-container/90 backdrop-blur-2xl transition-all duration-300 cursor-pointer shadow-xl overflow-hidden hover:scale-[1.01]" id="card-beginner" role="radio" tabindex="0">
+<!-- Glowing selected gradient rim indicator -->
+<div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-container via-transparent to-secondary opacity-30 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col justify-between h-full gap-space-lg">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary-container shadow-[0_0_24px_rgba(255,122,89,0.3)]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-['Fraunces'] text-headline-md text-on-surface">Beginner</h3>
+<span class="font-script-hinglish text-body-sm text-primary-fixed">(Hinglish hints)</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Gentle Pace • Safe Harbour</span>
+</div>
+</div>
+<!-- Selection Pill / Checkmark -->
+<div class="level-check flex items-center justify-center w-7 h-7 rounded-full bg-primary-container text-on-primary shadow-md">
+<span class="material-symbols-outlined text-base font-bold">check</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Speak freely without fear of pauses. When you get stuck for an English word, Priya prompts you in comfortable Hindi cues so your thoughts flow smoothly without hesitation.
+            </p>
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/90 text-primary-fixed font-body-sm text-body-sm shadow-sm">
+<span class="material-symbols-outlined text-xs">star</span>
+                Recommended for hesitation reduction
+              </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-low text-secondary font-script-hinglish text-script-hinglish text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                Hindi hints active (हिंदी में मदद)
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 2: Intermediate (English only) [Inactive State] -->
+<div aria-checked="false" class="level-card group relative p-space-lg rounded-3xl bg-surface-container-low/75 backdrop-blur-2xl transition-all duration-300 cursor-pointer shadow-md overflow-hidden hover:scale-[1.01] hover:bg-surface-container/80" id="card-intermediate" role="radio" tabindex="0">
+<div class="relative z-10 flex flex-col justify-between h-full gap-space-lg">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-secondary shadow-[0_0_20px_rgba(68,226,205,0.15)] group-hover:shadow-[0_0_28px_rgba(68,226,205,0.3)] transition-all">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-['Fraunces'] text-headline-md text-on-surface">Intermediate</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(English only)</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-tertiary">Real-world Tempo • Fluency Polish</span>
+</div>
+</div>
+<!-- Unselected Indicator -->
+<div class="level-check flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant group-hover:text-on-surface">
+<span class="material-symbols-outlined text-base">radio_button_unchecked</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Full English conversational immersion. Continuous organic dialogue with micro-refinements on vocabulary nuance, rhythm, and phrasing. Designed for workplaces and presentations.
+            </p>
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/90 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-xs text-secondary">verified</span>
+                100% English audio stream
+              </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/90 text-tertiary font-body-sm text-body-sm">
+                Advanced corporate phrasings
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Practice Topics (Three interactive cards) -->
+<section aria-labelledby="topics-heading" class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Phase 02</span>
+<span class="text-outline-variant text-xs">/</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="topics-heading">Pick a Speaking Realm</h2>
+</div>
+<p class="font-script-hinglish text-script-hinglish text-secondary text-sm">
+          हर विषय में 5 मिनट की वास्तविक बातचीत (5-minute realistic roleplay)
+        </p>
+</div>
+<div aria-label="Speaking Topic" class="grid grid-cols-1 md:grid-cols-3 gap-space-lg" role="radiogroup">
+<!-- Topic 1: Daily life (Selected) -->
+<div aria-checked="true" class="topic-card group relative flex flex-col justify-between rounded-3xl bg-surface-container/90 backdrop-blur-2xl p-space-md shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1" id="topic-daily" role="radio" tabindex="0">
+<!-- Selection Glow Overlay -->
+<div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary-container/20 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-surface-container-highest mb-4 shadow-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cozy aesthetic modern Indian cafe corner at twilight, artisanal ceramic coffee cup with gentle steam curling in warm amber light, blurred lush monsoon plants through rain-kissed glass window, peaceful sanctuary atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Cpmz-OUNl10zRBGGieZiWGihjm_cssbQ4hEBCVMz-hCglUQZHk_l5BvYbF652xDj0RkqtN_5Ljg34DpQByT9jiNahLZEkR5iZZfjU11My6ACnZynIPkogbAhL4jdtasckJMhajFeaZMxdRdLSMGV7wjzkPtcyJ56JTqSIlT442EgxM7g4mSsjPDbXlri82voe2oSSR0qbSQxQWq27zcuDfyhmNOXDkF7fEAdWCc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Selected Realm</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider">Scenario #01</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high/90 text-secondary font-label-caps text-label-caps">5 Mins</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-1">
+<div class="flex items-center justify-between">
+<h3 class="font-['Fraunces'] text-headline-md text-on-surface font-semibold">Daily life</h3>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">coffee</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed line-clamp-2">
+              Ordering coffee, friendly neighbour chats, polite market bargaining, and effortless weekend plans.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-body-sm text-body-sm text-secondary font-medium">Casual &amp; Relaxed</span>
+<span class="font-script-hinglish text-script-hinglish text-xs text-on-surface-variant">आरामदेह बातचीत</span>
+</div>
+</div>
+<!-- Topic 2: Interview -->
+<div aria-checked="false" class="topic-card group relative flex flex-col justify-between rounded-3xl bg-surface-container-low/80 backdrop-blur-2xl p-space-md shadow-md transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:bg-surface-container" id="topic-interview" role="radio" tabindex="0">
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-surface-container-highest mb-4 shadow-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern minimalist glass conference room illuminated with soft violet and electric teal cinematic rim lighting, architectural desk with sleek modern broadcast microphone and floating holographic resume note card, professional tech workplace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmyxyigKqfATDlLHPYr2H4Zw_Ir6xUqnYvbGU4lUKTQvILDF9ANkV6Ip_t3jBO7FEET8-UhGy19N3JczkcXehLsKyygAeSN8KBhTIZVFRpacmFl5Ri8BvtQdA9HYb3IlkATsuUPv1quvko8Hz7-8pgs3CEBO6pCUTGn4MmfqCU0REvX0BD-v4r5bim4xXNF2Si0XJ03Y1eZuflv2nevb7Is_wpZ0JPkOPUhUXjHP0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Career Track</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-wider">Scenario #02</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high/90 text-on-surface-variant font-label-caps text-label-caps">5 Mins</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-1">
+<div class="flex items-center justify-between">
+<h3 class="font-['Fraunces'] text-headline-md text-on-surface font-semibold">Interview</h3>
+<span class="material-symbols-outlined text-tertiary">work</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed line-clamp-2">
+              Impactful HR self-introduction, explaining complex tech projects simply, and clear salary discussions.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-body-sm text-body-sm text-tertiary font-medium">Career Boost</span>
+<span class="font-script-hinglish text-script-hinglish text-xs text-on-surface-variant">नौकरी इंटरव्यू तैयारी</span>
+</div>
+</div>
+<!-- Topic 3: Travel -->
+<div aria-checked="false" class="topic-card group relative flex flex-col justify-between rounded-3xl bg-surface-container-low/80 backdrop-blur-2xl p-space-md shadow-md transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:bg-surface-container" id="topic-travel" role="radio" tabindex="0">
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-surface-container-highest mb-4 shadow-md">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luminous architectural airport terminal lounge at dusk, large panoramic windows overlooking aircraft runways bathed in twilight indigo sky, subtle neon route lines and floating geometric globe hologram, peaceful wanderlust feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrGin4xKNUb2SVhwBbS42fH0b4ivNXm4lK1nSxXTH23yD4fYI4tS03-xmIynFRLkTuJcpVV-mQPtt4WcPnmzwI2kKqzDJLck02XVNy8H4Hiw_s86o6Y8kXHD5-kRCpWl8KkHwtx6RRL8TET1oKJhpca8y7YcdFyBsDom3hmNP-rG7ZI4RZpLIZDoS_5Zr19EgdinhGiZRV8St5thZo6UKjWoQEHlKVKG49KnU-ANQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Global Mobility</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Scenario #03</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high/90 text-on-surface-variant font-label-caps text-label-caps">5 Mins</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-1">
+<div class="flex items-center justify-between">
+<h3 class="font-['Fraunces'] text-headline-md text-on-surface font-semibold">Travel</h3>
+<span class="material-symbols-outlined text-secondary">flight_takeoff</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed line-clamp-2">
+              Airport customs check-in, navigating metro stations abroad, hotel desk requests, and dining out stress-free.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-surface-container-low/60 rounded-xl px-3 py-2">
+<span class="font-body-sm text-body-sm text-secondary font-medium">Zero Panic Travel</span>
+<span class="font-script-hinglish text-script-hinglish text-xs text-on-surface-variant">सफर में बिना हिचक</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Companion Preview Box / Priya's Voice Teaser -->
+<section class="w-full rounded-3xl bg-surface-container-low/90 backdrop-blur-2xl p-space-md sm:p-space-lg shadow-lg relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-center gap-space-md">
+<div class="relative shrink-0">
+<div class="w-14 h-14 rounded-full bg-gradient-to-tr from-primary-container to-secondary p-0.5 shadow-[0_0_20px_rgba(255,122,89,0.35)]">
+<div class="w-full h-full rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-2xl text-primary" style="font-variation-settings: 'FILL' 1;">face_6</span>
+</div>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary shadow-[0_0_8px_#44e2cd]"></span>
+</div>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Coach Priya</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-caps text-label-caps uppercase">Ready</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Warm, neutral Indian English accent. Completely private sanctuary — no scores or red marks shown until conversation wraps naturally.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-center shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-secondary font-semibold">Latency &lt;220ms</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Real-time voice synthesis</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-all shadow-sm" id="preview-voice-btn" type="button">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+<span class="font-body-sm text-body-sm font-medium">Hear Sample</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Bar / Action Center -->
+<aside class="fixed bottom-4 left-0 right-0 z-40 px-gutter md:px-margin-tablet lg:px-margin-desktop pointer-events-none">
+<div class="max-w-4xl mx-auto rounded-full bg-surface-container-high/90 backdrop-blur-2xl p-2 sm:px-6 sm:py-3 shadow-[0_8px_40px_rgba(0,0,0,0.55)] pointer-events-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+<a class="flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-colors py-1 px-3 rounded-full font-body-sm text-body-sm group" href="#">
+<span class="material-symbols-outlined text-base transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span>Change daily goal</span>
+</a>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<span class="hidden lg:inline-block font-body-sm text-body-sm text-on-surface-variant/80">
+          Step 3 mic calibration starts immediately
+        </span>
+<a class="w-full sm:w-auto h-[52px] px-8 rounded-full bg-gradient-to-r from-primary via-primary-container to-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2 shadow-[0_0_35px_rgba(255,122,89,0.4)] hover:shadow-[0_0_50px_rgba(255,122,89,0.65)] hover:scale-[1.02] active:scale-95 transition-all" href="#">
+<span>Begin Practice</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="max-w-4xl mx-auto text-center pt-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70">Pressing Begin will activate microphone permission in this safe sanctuary</span>
+</div>
+</aside>
+<!-- Interactive State Logic -->
+<script>
+    (function () {
+      const levelCards = document.querySelectorAll('.level-card');
+      levelCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          levelCards.forEach((c) => {
+            c.setAttribute('aria-checked', 'false');
+            c.classList.remove('bg-surface-container/90', 'shadow-xl');
+            c.classList.add('bg-surface-container-low/75', 'shadow-md');
+            const check = c.querySelector('.level-check');
+            if (check) {
+              check.className = 'level-check flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant';
+              check.innerHTML = '<span class="material-symbols-outlined text-base">radio_button_unchecked</span>';
+            }
+          });
+          card.setAttribute('aria-checked', 'true');
+          card.classList.remove('bg-surface-container-low/75', 'shadow-md');
+          card.classList.add('bg-surface-container/90', 'shadow-xl');
+          const activeCheck = card.querySelector('.level-check');
+          if (activeCheck) {
+            activeCheck.className = 'level-check flex items-center justify-center w-7 h-7 rounded-full bg-primary-container text-on-primary shadow-md';
+            activeCheck.innerHTML = '<span class="material-symbols-outlined text-base font-bold">check</span>';
+          }
+        });
+      });
+
+      const topicCards = document.querySelectorAll('.topic-card');
+      topicCards.forEach((topic) => {
+        topic.addEventListener('click', () => {
+          topicCards.forEach((t) => {
+            t.setAttribute('aria-checked', 'false');
+            t.classList.remove('bg-surface-container/90', 'shadow-xl');
+            t.classList.add('bg-surface-container-low/80', 'shadow-md');
+            const tag = t.querySelector('.absolute.top-3.left-3 span:last-child');
+            if (tag) tag.textContent = 'Topic Option';
+          });
+          topic.setAttribute('aria-checked', 'true');
+          topic.classList.remove('bg-surface-container-low/80', 'shadow-md');
+          topic.classList.add('bg-surface-container/90', 'shadow-xl');
+          const activeTag = topic.querySelector('.absolute.top-3.left-3 span:last-child');
+          if (activeTag) activeTag.textContent = 'Selected Realm';
+        });
+      });
+
+      const voiceBtn = document.getElementById('preview-voice-btn');
+      if (voiceBtn) {
+        voiceBtn.addEventListener('click', () => {
+          const icon = voiceBtn.querySelector('.material-symbols-outlined');
+          const text = voiceBtn.querySelector('span:last-child');
+          if (icon && text) {
+            icon.textContent = 'graphic_eq';
+            text.textContent = 'Playing Namaste...';
+            setTimeout(() => {
+              icon.textContent = 'volume_up';
+              text.textContent = 'Hear Sample';
+            }, 2400);
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="relative z-10 w-full bg-surface-container-lowest/80 backdrop-blur-xl py-space-lg"><div class="w-full px-gutter md:px-margin-tablet lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-['Fraunces'] text-lg font-bold text-on-surface">Bol</span><span class="font-body-sm text-body-sm text-on-surface-variant">— Peaceful sanctuary for English fluency</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Pronunciation Vault</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Hinglish Guide</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Voice Safety</a></div><div class="font-label-caps text-label-caps text-on-surface-variant/70">© 2024 Bol. Designed for Hindi-speaking aspirants.</div></div></footer></body></html>
