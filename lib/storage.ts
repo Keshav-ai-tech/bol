@@ -151,24 +151,25 @@ export function saveSession(session: PracticeSession): void {
   }
 }
 
+export const DEFAULT_PROGRESS: UserProgress = {
+  streak: 5,
+  lastPracticeDate: '2026-10-27',
+  totalSessions: 5,
+  totalMinutes: 24,
+};
+
 export function getStoredProgress(): UserProgress {
   if (typeof window === 'undefined') {
-    return { streak: 5, lastPracticeDate: '2026-10-27', totalSessions: 5, totalMinutes: 24 };
+    return DEFAULT_PROGRESS;
   }
   try {
     const raw = localStorage.getItem(PROGRESS_KEY);
     if (!raw) {
-      const initial: UserProgress = {
-        streak: 5,
-        lastPracticeDate: '2026-10-27',
-        totalSessions: 5,
-        totalMinutes: 24,
-      };
-      localStorage.setItem(PROGRESS_KEY, JSON.stringify(initial));
-      return initial;
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(DEFAULT_PROGRESS));
+      return DEFAULT_PROGRESS;
     }
     return JSON.parse(raw);
   } catch (err) {
-    return { streak: 5, lastPracticeDate: '2026-10-27', totalSessions: 5, totalMinutes: 24 };
+    return DEFAULT_PROGRESS;
   }
 }

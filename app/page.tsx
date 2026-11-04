@@ -19,6 +19,7 @@ import {
 import {
   getStoredSessions,
   getStoredProgress,
+  DEFAULT_PROGRESS,
   saveSession,
   PracticeSession,
   SessionTurn,
@@ -285,7 +286,7 @@ export default function BolSanctuary() {
 
   // Summary & Progress State
   const [latestSummary, setLatestSummary] = useState<any>(demoData.defaultSummary);
-  const [progress, setProgress] = useState(getStoredProgress());
+  const [progress, setProgress] = useState(DEFAULT_PROGRESS);
   const [sessions, setSessions] = useState<PracticeSession[]>([]);
 
   // Filler Word Detection & Shareable Scorecard State
@@ -909,7 +910,10 @@ export default function BolSanctuary() {
               >
                 local_fire_department
               </span>
-              <span className="font-['Space_Grotesk'] text-[11px] sm:text-[12px] font-bold text-[#ffb4a2] uppercase tracking-wider">
+              <span
+                suppressHydrationWarning
+                className="font-['Space_Grotesk'] text-[11px] sm:text-[12px] font-bold text-[#ffb4a2] uppercase tracking-wider"
+              >
                 {progress.streak}d
               </span>
             </motion.button>
@@ -1114,7 +1118,7 @@ export default function BolSanctuary() {
                     >
                       local_fire_department
                     </span>
-                    <span>View {progress.streak}-Day Streak</span>
+                    <span suppressHydrationWarning>View {progress.streak}-Day Streak</span>
                   </MotionButton>
                 </div>
               </div>
