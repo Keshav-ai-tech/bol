@@ -4,9 +4,10 @@ import { generateSessionSummary } from '@/lib/services/llm';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { history = [], level = 'beginner', topic = 'daily_life', language = 'en' } = body;
+    const { history = [], level = 'beginner', topic = 'daily_life', language = 'en', apiKey } = body;
+    const customApiKey = apiKey || req.headers.get('x-api-key') || undefined;
 
-    const summary = await generateSessionSummary(history, level, topic, language);
+    const summary = await generateSessionSummary(history, level, topic, language, customApiKey);
     return NextResponse.json(summary);
   } catch (error: any) {
     console.error('Error in /api/summary:', error);

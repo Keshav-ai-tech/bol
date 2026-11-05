@@ -12,6 +12,7 @@ import { AudioWaveform } from '@/components/AudioWaveform';
 import { ParallaxSpheres } from '@/components/ParallaxSpheres';
 import {
   VoiceRecorder,
+  BrowserSpeechRecognizer,
   playTutorVoice,
   stopAnyPlayingAudio,
   downloadReportFile,
@@ -43,6 +44,11 @@ export type PracticeTopic = 'daily_life' | 'interview' | 'travel' | 'jugaad_geni
 const TOPIC_STARTER_PROMPTS: Record<PracticeTopic, Array<{ en: string; hi: string; ta: string }>> = {
   daily_life: [
     {
+      en: "Hello! How are you doing today?",
+      hi: "नमस्ते! आज आप कैसे हैं?",
+      ta: "வணக்கம்! இன்று நீங்கள் எப்படி இருக்கிறீர்கள்?",
+    },
+    {
       en: "Today morning I had tea and went for a quick walk.",
       hi: "आज सुबह मैंने चाय पी और सैर पर गया।",
       ta: "இன்று காலை நான் தேநீர் குடித்துவிட்டு நடைப்பயிற்சி சென்றேன்.",
@@ -59,6 +65,11 @@ const TOPIC_STARTER_PROMPTS: Record<PracticeTopic, Array<{ en: string; hi: strin
     },
   ],
   interview: [
+    {
+      en: "Good morning! It's a pleasure to speak with you today.",
+      hi: "गुड मॉर्निंग! आज आपसे बात करके खुशी हुई।",
+      ta: "காலை வணக்கம்! இன்று உங்களுடன் பேசுவதில் மகிழ்ச்சி.",
+    },
     {
       en: "I have good problem solving skills and I love working in teams.",
       hi: "मेरी प्रॉब्लम सॉल्विंग अच्छी है और टीम में काम करना पसंद है।",
@@ -77,6 +88,11 @@ const TOPIC_STARTER_PROMPTS: Record<PracticeTopic, Array<{ en: string; hi: strin
   ],
   travel: [
     {
+      en: "Hello! Could you recommend some nice places to visit?",
+      hi: "नमस्ते! क्या आप घूमने के लिए कुछ अच्छी जगहों की सलाह दे सकते हैं?",
+      ta: "வணக்கம்! சுற்றிப் பார்க்க நல்ல இடங்களைப் பரிந்துரைக்க முடியுமா?",
+    },
+    {
       en: "Could you please help me with the directions to the nearest metro?",
       hi: "क्या आप नज़दीकी मेट्रो का रास्ता बता सकते हैं?",
       ta: "அருகிலுள்ள மெட்ரோ நிலையத்திற்கான வழியைக் கூற முடியுமா?",
@@ -93,6 +109,11 @@ const TOPIC_STARTER_PROMPTS: Record<PracticeTopic, Array<{ en: string; hi: strin
     },
   ],
   jugaad_genius: [
+    {
+      en: "Hello! I am ready for the quick problem-solving challenge.",
+      hi: "नमस्ते! मैं त्वरित समस्या समाधान चुनौती के लिए तैयार हूँ।",
+      ta: "வணக்கம்! சமயோசித சவாலுக்கு நான் தயார்.",
+    },
     {
       en: "Could you please give me the cash change instead of toffees? I need it for the bus fare.",
       hi: "क्या मुझे टॉफ़ी के बदले छुट्टे पैसे मिल सकते हैं? मुझे बस के किराए के लिए चाहिए।",
@@ -309,8 +330,17 @@ export default function BolSanctuary() {
 
   // Audio Recorder & Timers
   const recorderRef = useRef<VoiceRecorder | null>(null);
+  const speechRecognizerRef = useRef<BrowserSpeechRecognizer | null>(null);
   const sessionTimerRef = useRef<NodeJS.Timeout | null>(null);
   const recordingTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Simultaneous Continuous Voice Chat
+  const [autoListen, setAutoListen] = useState<boolean>(true);
+  const autoListenRef = useRef<boolean>(true);
+
+  useEffect(() => {
+    autoListenRef.current = autoListen;
+  }, [autoListen]);
 
   // Show transient toast notifications
   const showToast = (msg: string) => {
@@ -425,9 +455,8 @@ export default function BolSanctuary() {
     setRecordingSeconds(0);
     setLiveVolume(0);
     setTurns([]);
-    const initialStarter = isTamil ? "வணக்கம் மலர், நான் பயிற்சி செய்யத் தயார்!" : "Yesterday I went to the market to buy fresh vegetables.";
-    setCurrentTranscript(initialStarter);
-    setCurrentFillerAnalysis(analyzeFillers(initialStarter));
+    setCurrentTranscript('');
+    setCurrentFillerAnalysis(null);
     setCurrentReply(greetingText);
     setCurrentHindiSubtext(subtext);
     setCurrentCorrections([]);
@@ -465,6 +494,13 @@ export default function BolSanctuary() {
       0.95,
       () => {
         setVoiceState('idle');
+        if (autoListenRef.current) {
+          setTimeout(() => {
+            if (autoListenRef.current) {
+              handleStartRecording();
+            }
+          }, 600);
+        }
       },
       langConfig.ttsCode
     );
@@ -475,8 +511,27 @@ export default function BolSanctuary() {
     stopAnyPlayingAudio();
     setLiveVolume(0);
     setRecordingSeconds(0);
+    setCurrentTranscript('');
+    setCurrentFillerAnalysis(null);
+
+    const langConfig = getLanguageConfig(selectedLanguage);
 
     try {
+      // 1. Initialize & start browser live speech recognition for real-time speech capture
+      if (!speechRecognizerRef.current) {
+        speechRecognizerRef.current = new BrowserSpeechRecognizer();
+      }
+      speechRecognizerRef.current.start(
+        langConfig.sttCode || 'en-IN',
+        (liveText) => {
+          if (liveText && liveText.trim()) {
+            setCurrentTranscript(liveText);
+            setCurrentFillerAnalysis(analyzeFillers(liveText));
+          }
+        }
+      );
+
+      // 2. Initialize & start audio recorder for backend STT / volume visualization
       if (!recorderRef.current) recorderRef.current = new VoiceRecorder();
       await recorderRef.current.start((vol) => {
         setLiveVolume(vol);
@@ -501,7 +556,7 @@ export default function BolSanctuary() {
   };
 
   const handleStopRecording = async () => {
-    if (!recorderRef.current || voiceState !== 'recording') return;
+    if (voiceState !== 'recording') return;
     if (recordingTimerRef.current) {
       clearInterval(recordingTimerRef.current);
       recordingTimerRef.current = null;
@@ -509,40 +564,56 @@ export default function BolSanctuary() {
 
     try {
       setVoiceState('transcribing');
-      const { blob } = await recorderRef.current.stop();
+
+      // 1. Capture live speech recognition transcript from browser microphone
+      const browserSpeechText = speechRecognizerRef.current ? speechRecognizerRef.current.stop() : '';
+
+      let blob: Blob | null = null;
+      if (recorderRef.current) {
+        const result = await recorderRef.current.stop();
+        blob = result.blob;
+      }
       setLiveVolume(0);
 
-      let transcript = '';
+      let transcript = browserSpeechText.trim();
 
-      if (!demoMode) {
-        const formData = new FormData();
-        formData.append('audio', blob, 'turn.wav');
-        formData.append('language', selectedLanguage);
-        if (gnaniKey) {
-          formData.append('apiKey', gnaniKey);
+      // 2. If browser speech recognition was not supported or empty, fallback to backend /api/transcribe
+      if (!transcript && blob && !demoMode) {
+        try {
+          const formData = new FormData();
+          formData.append('audio', blob, 'turn.wav');
+          formData.append('language', selectedLanguage);
+          if (gnaniKey) {
+            formData.append('apiKey', gnaniKey);
+          }
+
+          const res = await fetch('/api/transcribe', {
+            method: 'POST',
+            headers: gnaniKey ? { 'x-api-key': gnaniKey } : undefined,
+            body: formData,
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            if (data.transcript) {
+              transcript = data.transcript.trim();
+            }
+          }
+        } catch (backendErr) {
+          console.warn('Backend STT fallback fetch error:', backendErr);
         }
+      }
 
-        const res = await fetch('/api/transcribe', {
-          method: 'POST',
-          headers: gnaniKey ? { 'x-api-key': gnaniKey } : undefined,
-          body: formData,
-        });
-
-        if (res.ok) {
-          const data = await res.json();
-          transcript = data.transcript;
-        } else {
-          throw new Error('Transcription API error');
-        }
-      } else {
+      // 3. Fallback only if demoMode explicitly active AND nothing heard from user
+      if (!transcript && demoMode) {
         const topicData = demoData.topics[topic] || demoData.topics.daily_life;
         const turnIndex = turns.length % topicData.turns.length;
         transcript = topicData.turns[turnIndex].transcript;
       }
 
       if (!transcript || transcript.trim().length === 0) {
-        setVoiceState('error');
-        setErrorMessage("Couldn't hear you clearly, please tap the mic to speak again.");
+        setVoiceState('idle');
+        setErrorMessage("I couldn't hear your voice clearly. Tap the orb or speak again — Bol is listening!");
         return;
       }
 
@@ -550,7 +621,7 @@ export default function BolSanctuary() {
     } catch (err: any) {
       console.error('Turn processing error:', err);
       setVoiceState('error');
-      setErrorMessage("Voice processing paused. Bol is right here with you — tap retry to speak again.");
+      setErrorMessage("Voice processing paused. Bol is right here with you — tap the orb to speak again.");
     }
   };
 
@@ -558,6 +629,9 @@ export default function BolSanctuary() {
     if (recordingTimerRef.current) {
       clearInterval(recordingTimerRef.current);
       recordingTimerRef.current = null;
+    }
+    if (speechRecognizerRef.current) {
+      speechRecognizerRef.current.cancel();
     }
     if (recorderRef.current) {
       recorderRef.current.cancel();
@@ -581,25 +655,29 @@ export default function BolSanctuary() {
     try {
       const tutorRes = await fetch('/api/tutor', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(geminiKey ? { 'x-api-key': geminiKey } : {}),
+        },
         body: JSON.stringify({
           transcript,
           history: historyPayload,
           level,
           topic,
           language: selectedLanguage,
+          ...(geminiKey ? { apiKey: geminiKey } : {}),
         }),
       });
 
       const tutorData = await tutorRes.json();
-      const reply = tutorData.reply || "That was a good attempt! Tell me more about that.";
+      const reply = tutorData.reply || (selectedLanguage === 'ta' ? "நன்று! மேலும் சொல்லுங்கள்." : "That's wonderful! Please tell me more about that.");
       const corrections = tutorData.corrections || [];
 
       setCurrentReply(reply);
       setCurrentCorrections(corrections);
       setCurrentHindiSubtext(
         selectedLanguage === 'ta'
-          ? "மலர் உங்கள் பதிலைக் கேட்டு உடனடி விளக்கம் தருகிறார் — அடுத்த வினாவை எதிர்கொள்ளுங்கள்"
+          ? "மலர் உங்கள் பதிலைக் கேட்டு உடனடி விளக்கம் தருகிறார் — உரையாடலைத் தொடருங்கள்"
           : selectedLanguage === 'hi'
           ? "मीरा सुन रही हैं — आराम से अपनी गति में बोलें, कोई जल्दबाजी नहीं।"
           : level === 'beginner'
@@ -648,6 +726,13 @@ export default function BolSanctuary() {
         0.95,
         () => {
           setVoiceState('idle');
+          if (autoListenRef.current) {
+            setTimeout(() => {
+              if (autoListenRef.current) {
+                handleStartRecording();
+              }
+            }, 600);
+          }
         },
         getLanguageConfig(selectedLanguage).ttsCode
       );
@@ -665,6 +750,9 @@ export default function BolSanctuary() {
    */
   const handleEndSession = async () => {
     stopAnyPlayingAudio();
+    if (speechRecognizerRef.current) {
+      speechRecognizerRef.current.cancel();
+    }
     if (recordingTimerRef.current) {
       clearInterval(recordingTimerRef.current);
       recordingTimerRef.current = null;
@@ -696,12 +784,16 @@ export default function BolSanctuary() {
       const startTime = Date.now();
       const res = await fetch('/api/summary', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(geminiKey ? { 'x-api-key': geminiKey } : {}),
+        },
         body: JSON.stringify({
           history: historyPayload,
           level,
           topic,
           language: selectedLanguage,
+          ...(geminiKey ? { apiKey: geminiKey } : {}),
         }),
       });
 
@@ -1533,8 +1625,22 @@ export default function BolSanctuary() {
                 </div>
               </div>
 
-              {/* Timer, Turn & Finish Button */}
-              <div className="flex items-center gap-2 sm:gap-3 ml-auto">
+              {/* Timer, Turn, Mode Toggle & Finish Button */}
+              <div className="flex items-center gap-2 sm:gap-3 ml-auto flex-wrap">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setAutoListen((prev) => !prev)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-['Space_Grotesk'] font-medium flex items-center gap-1.5 border transition-all ${
+                    autoListen
+                      ? 'bg-[#44e2cd]/15 text-[#44e2cd] border-[#44e2cd]/40 shadow-[0_0_12px_rgba(68,226,205,0.2)]'
+                      : 'bg-[#262747]/60 text-[#dfc0b8] border-[#313253] hover:text-[#e1e0ff]'
+                  }`}
+                  title={autoListen ? "Continuous Two-Way Flow: Mic opens automatically after AI replies" : "Tap to Talk: Manually press orb to speak"}
+                >
+                  <span className={`w-2 h-2 rounded-full ${autoListen ? 'bg-[#44e2cd] animate-ping' : 'bg-[#dfc0b8]'}`}></span>
+                  <span>{autoListen ? 'Simultaneous Flow: ON' : 'Tap to Talk'}</span>
+                </motion.button>
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#262747]/60 border border-[#313253]">
                   <span className="material-symbols-outlined text-[#cabeff] text-[16px] animate-pulse">timer</span>
                   <span className="font-['Space_Grotesk'] text-[13px] text-[#e1e0ff] font-semibold tabular-nums">
@@ -1574,6 +1680,62 @@ export default function BolSanctuary() {
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {/* PREVIOUS TURNS: TWO-WAY DIALOGUE THREAD */}
+            {turns.length > 0 && (
+              <div className="flex flex-col gap-3 p-4 sm:p-5 rounded-3xl bg-[#131433]/70 border border-[#262747]/80 backdrop-blur-md max-h-72 overflow-y-auto">
+                <div className="flex items-center justify-between pb-2 border-b border-[#262747]/50">
+                  <span className="text-[11px] font-['Space_Grotesk'] uppercase tracking-wider text-[#dfc0b8] flex items-center gap-1.5 font-semibold">
+                    <span className="material-symbols-outlined text-xs text-[#44e2cd]">forum</span>
+                    Live Dialogue Thread ({turns.length} exchange{turns.length > 1 ? 's' : ''})
+                  </span>
+                  <span className="text-[10px] font-['Space_Grotesk'] text-[#44e2cd]">
+                    Two-way conversation
+                  </span>
+                </div>
+                <div className="space-y-3 pt-1">
+                  {turns.map((t, idx) => (
+                    <div key={idx} className="flex flex-col gap-2">
+                      {/* User spoken message */}
+                      <div className="flex justify-end">
+                        <div className="max-w-[85%] sm:max-w-[75%] rounded-2xl rounded-tr-sm bg-[#ff7a59]/15 border border-[#ff7a59]/30 px-4 py-2.5 shadow-sm text-right">
+                          <div className="flex items-center justify-end gap-1.5 mb-1 text-[10px] font-['Space_Grotesk'] uppercase text-[#ffb4a2] font-semibold">
+                            <span>You</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a59]"></span>
+                          </div>
+                          <p className="font-['Plus_Jakarta_Sans'] text-[14px] text-[#ffdad2] leading-relaxed">
+                            “{t.transcript}”
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Coach reply */}
+                      <div className="flex justify-start">
+                        <div className="max-w-[85%] sm:max-w-[75%] rounded-2xl rounded-tl-sm bg-[#1b1c3c] border border-[#262747] px-4 py-2.5 shadow-sm text-left">
+                          <div className="flex items-center justify-between gap-3 mb-1">
+                            <div className="flex items-center gap-1.5 text-[10px] font-['Space_Grotesk'] uppercase text-[#44e2cd] font-semibold">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#44e2cd]"></span>
+                              <span>{selectedLanguage === 'ta' ? 'Malar (மலர்)' : selectedLanguage === 'hi' ? 'Meera (मीरा)' : 'Priya'}</span>
+                            </div>
+                            <button
+                              onClick={() => playTutorVoice(t.reply)}
+                              className="text-[11px] text-[#cabeff] hover:text-[#44e2cd] flex items-center gap-1 transition-colors"
+                              title="Replay coach audio"
+                            >
+                              <span className="material-symbols-outlined text-[13px]">volume_up</span>
+                              <span>Listen</span>
+                            </button>
+                          </div>
+                          <p className="font-['Plus_Jakarta_Sans'] text-[14px] text-[#e1e0ff] leading-relaxed">
+                            “{t.reply}”
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* DUAL CONVERSATION FLOW CARDS */}
             <div className="flex flex-col gap-5">
@@ -1657,7 +1819,7 @@ export default function BolSanctuary() {
               </motion.article>
 
               {/* Card 2: Student Transcript */}
-              {currentTranscript && (
+              {(currentTranscript || voiceState === 'recording') && (
                 <motion.article
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -1666,9 +1828,9 @@ export default function BolSanctuary() {
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#ff7a59] animate-pulse shadow-[0_0_8px_#ff7a59]"></div>
+                      <div className={`w-2.5 h-2.5 rounded-full ${voiceState === 'recording' ? 'bg-[#ff7a59] animate-ping' : 'bg-[#44e2cd]'}`}></div>
                       <span className="font-['Space_Grotesk'] text-[11px] uppercase tracking-widest text-[#dfc0b8] font-semibold">
-                        You said
+                        {voiceState === 'recording' ? 'You are speaking now...' : 'You said'}
                       </span>
                     </div>
 
@@ -1691,31 +1853,39 @@ export default function BolSanctuary() {
 
                       <span className="font-['Space_Grotesk'] text-[11px] text-[#44e2cd] flex items-center gap-1">
                         <span className="material-symbols-outlined text-xs">mic_external_on</span>
-                        Captured with Gnani Prisma STT
+                        Live Voice STT
                       </span>
                     </div>
                   </div>
 
                   <p className="font-['Plus_Jakarta_Sans'] text-[16px] text-[#e1e0ff] leading-relaxed">
-                    “
-                    {currentFillerAnalysis && currentFillerAnalysis.tokens.length > 0 ? (
-                      currentFillerAnalysis.tokens.map((token, i) =>
-                        token.isFiller ? (
-                          <span
-                            key={i}
-                            title={`Filler crutch: "${token.cleanFiller || token.text}"`}
-                            className="bg-[#ff7a59]/25 text-[#ffdad2] px-1.5 py-0.5 rounded-md border border-[#ff7a59]/50 font-semibold mx-0.5 inline-block"
-                          >
-                            {token.text}
-                          </span>
+                    {currentTranscript ? (
+                      <>
+                        “
+                        {currentFillerAnalysis && currentFillerAnalysis.tokens.length > 0 ? (
+                          currentFillerAnalysis.tokens.map((token, i) =>
+                            token.isFiller ? (
+                              <span
+                                key={i}
+                                title={`Filler crutch: "${token.cleanFiller || token.text}"`}
+                                className="bg-[#ff7a59]/25 text-[#ffdad2] px-1.5 py-0.5 rounded-md border border-[#ff7a59]/50 font-semibold mx-0.5 inline-block"
+                              >
+                                {token.text}
+                              </span>
+                            ) : (
+                              <span key={i}>{token.text} </span>
+                            )
+                          )
                         ) : (
-                          <span key={i}>{token.text} </span>
-                        )
-                      )
+                          currentTranscript
+                        )}
+                        ”
+                      </>
                     ) : (
-                      currentTranscript
+                      <span className="text-[#dfc0b8]/70 italic font-['Noto_Sans']">
+                        Listening to your microphone... say “Hello” or reply in your own words!
+                      </span>
                     )}
-                    ”
                   </p>
                 </motion.article>
               )}
@@ -1864,17 +2034,23 @@ export default function BolSanctuary() {
               <div className="mt-4 flex flex-col items-center gap-1 text-center">
                 <span className="font-['Space_Grotesk'] text-[13px] font-semibold text-[#e1e0ff] tracking-wide">
                   {voiceState === 'recording'
-                    ? 'Listening to your voice... (Tap orb to finish)'
+                    ? 'Listening to your voice... (Tap orb when done speaking)'
                     : voiceState === 'transcribing'
-                    ? 'Transcribing your words with Gnani Prisma STT...'
+                    ? 'Transcribing your words...'
                     : voiceState === 'thinking'
-                    ? 'Priya is preparing your coaching reply...'
+                    ? `${selectedLanguage === 'ta' ? 'மலர்' : selectedLanguage === 'hi' ? 'मीरा' : 'Priya'} is preparing your coaching reply...`
                     : voiceState === 'speaking'
-                    ? 'Priya is speaking out loud...'
+                    ? `${selectedLanguage === 'ta' ? 'மலர்' : selectedLanguage === 'hi' ? 'मीरा' : 'Priya'} is speaking out loud...`
+                    : autoListen
+                    ? 'Simultaneous Flow Active • Ready for your response'
                     : 'Tap orb or press Spacebar to speak'}
                 </span>
                 <span className="font-['Noto_Sans'] text-xs text-[#dfc0b8]">
-                  {voiceState === 'recording' ? 'आराम से बोलें, हम सुन रहे हैं...' : 'बोलो, गलती से मत डरो'}
+                  {voiceState === 'recording'
+                    ? (selectedLanguage === 'ta' ? 'தயக்கமின்றி பேசுங்கள், மலர் கேட்கிறார்...' : 'आराम से बोलें, हम सुन रहे हैं...')
+                    : autoListen && voiceState === 'idle'
+                    ? (selectedLanguage === 'ta' ? 'தானியங்கு முறை இயங்குகிறது • பேச தயாரா?' : 'लगातार बातचीत जारी है • अपनी बात कहें')
+                    : 'बोलो, गलती से मत डरो'}
                 </span>
               </div>
 
@@ -1914,7 +2090,7 @@ export default function BolSanctuary() {
                     type="text"
                     value={manualText}
                     onChange={(e) => setManualText(e.target.value)}
-                    placeholder="e.g. I went to the market today..."
+                    placeholder="e.g. Hello Priya, how are you?..."
                     className="flex-1 px-4 py-2.5 rounded-full bg-[#1b1c3c] border border-[#262747] text-[#e1e0ff] placeholder-[#a68b84] text-sm focus:outline-none focus:border-[#44e2cd]"
                   />
                   <MotionButton type="submit" className="px-5 py-2.5 rounded-full text-sm">

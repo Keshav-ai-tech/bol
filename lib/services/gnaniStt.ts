@@ -48,25 +48,69 @@ export async function transcribeAudio(
         throw new Error(`Gnani STT responded with HTTP ${response.status}: ${errorText}`);
       }
 
-      const data = await response.json();
-      const transcript = data.transcript || data.text || data.result || '';
-      return {
-        transcript: transcript.trim(),
-        confidence: 0.95,
-        provider: 'gnani',
-      };
+      const data: any = await response.json();
+      if (data && (data.transcript || data.text || data.result)) {
+        const transcript = data.transcript || data.text || data.result || '';
+        return {
+          transcript: transcript.trim(),
+          confidence: 0.95,
+          provider: 'gnani',
+        };
+      }
     } catch (err) {
-      console.warn('[Gnani STT Warning] API call failed, falling back to simulated recognition:', err);
+      console.warn('[Gnani STT Warning] API call failed, trying secondary fallback:', err);
     }
   }
 
-  // Fallback demo recognition for offline/evaluation mode
-  const isTamil = languageCode.startsWith('ta');
+  // 2. Secondary fallback: Gemini Multimodal Audio Transcription if GEMINI_API_KEY is available
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.LLM_API_KEY;
+  if (geminiKey) {
+    try {
+      const model = process.env.LLM_MODEL || 'gemini-1.5-flash';
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiKey}`;
+      const base64Audio = audioBuffer.toString('base64');
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  inlineData: {
+                    mimeType: mimeType.includes('wav') ? 'audio/wav' : mimeType || 'audio/wav',
+                    data: base64Audio,
+                  },
+                },
+                {
+                  text: `Please transcribe the exact words spoken in this audio. The expected primary language is ${languageCode}. Return ONLY the verbatim transcribed text, without any additional notes or preamble.`,
+                },
+              ],
+            },
+          ],
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+        if (text) {
+          return {
+            transcript: text,
+            confidence: 0.96,
+            provider: 'web-fallback',
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('[Gemini STT Warning] Audio transcription failed:', e);
+    }
+  }
+
+  // If both server providers are unavailable, return an empty transcript so client SpeechRecognition or user input takes precedence
   return {
-    transcript: isTamil
-      ? "வணக்கம்! நான் இன்று புதிய சொற்களைப் பயிற்சி செய்ய விரும்புகிறேன்."
-      : "Yesterday I was went to the market for buying fresh vegetables.",
-    confidence: 0.94,
-    provider: 'demo',
+    transcript: '',
+    confidence: 0,
+    provider: 'web-fallback',
   };
 }

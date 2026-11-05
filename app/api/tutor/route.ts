@@ -10,7 +10,9 @@ export async function POST(req: NextRequest) {
       level = 'beginner',
       topic = 'daily_life',
       language = 'en',
+      apiKey,
     } = body;
+    const customApiKey = apiKey || req.headers.get('x-api-key') || undefined;
 
     if (!transcript || typeof transcript !== 'string') {
       return NextResponse.json(
@@ -19,7 +21,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const tutorReply = await generateTutorReply(transcript, history, level, topic, language);
+    const tutorReply = await generateTutorReply(transcript, history, level, topic, language, customApiKey);
 
     return NextResponse.json(tutorReply);
   } catch (error: any) {

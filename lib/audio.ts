@@ -4,6 +4,107 @@
  * Converts recordings to 16kHz mono WAV for Gnani Prisma STT compliance.
  */
 
+/**
+ * Live Client-Side Speech Recognition (Web Speech API)
+ * Captures real-time words verbatim directly from the browser microphone.
+ */
+export class BrowserSpeechRecognizer {
+  private recognition: any = null;
+  private interimTranscript: string = '';
+  private finalTranscript: string = '';
+  private isListening: boolean = false;
+  private langCode: string = 'en-IN';
+
+  constructor(langCode: string = 'en-IN') {
+    this.langCode = langCode;
+  }
+
+  isSupported(): boolean {
+    if (typeof window === 'undefined') return false;
+    return !!((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
+  }
+
+  start(
+    langCode: string,
+    onInterim: (text: string) => void,
+    onFinal?: (text: string) => void
+  ): boolean {
+    if (typeof window === 'undefined') return false;
+    const SpeechRecognitionClass = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognitionClass) return false;
+
+    try {
+      if (this.recognition && this.isListening) {
+        try {
+          this.recognition.abort();
+        } catch {}
+      }
+
+      this.recognition = new SpeechRecognitionClass();
+      this.recognition.continuous = true;
+      this.recognition.interimResults = true;
+      this.recognition.maxAlternatives = 1;
+      this.recognition.lang = langCode || this.langCode || 'en-IN';
+
+      this.interimTranscript = '';
+      this.finalTranscript = '';
+      this.isListening = true;
+
+      this.recognition.onresult = (event: any) => {
+        let interim = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          const res = event.results[i];
+          if (res.isFinal) {
+            this.finalTranscript += res[0].transcript + ' ';
+          } else {
+            interim += res[0].transcript;
+          }
+        }
+        this.interimTranscript = interim;
+        const current = (this.finalTranscript + ' ' + interim).trim();
+        if (current) onInterim(current);
+      };
+
+      this.recognition.onerror = (event: any) => {
+        console.warn('[BrowserSpeechRecognizer] Warning:', event.error);
+      };
+
+      this.recognition.onend = () => {
+        this.isListening = false;
+        const full = (this.finalTranscript + ' ' + this.interimTranscript).trim();
+        if (onFinal && full) onFinal(full);
+      };
+
+      this.recognition.start();
+      return true;
+    } catch (e) {
+      console.warn('[BrowserSpeechRecognizer] Start failed:', e);
+      return false;
+    }
+  }
+
+  stop(): string {
+    if (this.recognition && this.isListening) {
+      try {
+        this.recognition.stop();
+      } catch {}
+    }
+    this.isListening = false;
+    return (this.finalTranscript + ' ' + this.interimTranscript).trim();
+  }
+
+  cancel(): void {
+    if (this.recognition) {
+      try {
+        this.recognition.abort();
+      } catch {}
+    }
+    this.isListening = false;
+    this.finalTranscript = '';
+    this.interimTranscript = '';
+  }
+}
+
 export class VoiceRecorder {
   private mediaRecorder: MediaRecorder | null = null;
   private audioChunks: Blob[] = [];

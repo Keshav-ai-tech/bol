@@ -9,8 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "framer-motion": "^14.7.1",
     "next": "16.4.3",
+    "postcss": "^8.5.32",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
